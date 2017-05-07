@@ -24,7 +24,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition register-page">
+<body id = "body" class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
     <a href="../../index2.html"><b>Admin</b>LTE</a>
@@ -35,15 +35,19 @@
 
     <form action="../../index.html" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Full name">
+        <input id = "fullname" type="text" class="form-control" placeholder="Full name">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" id = "email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input id = "mobile" type="text" class="form-control" placeholder="Mobile">
+        <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input id = "password" type="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -60,7 +64,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="button" id = "submitButton" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
         <!-- /.col -->
       </div>
@@ -86,6 +90,12 @@
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="../../plugins/iCheck/icheck.min.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+
 <script>
   $(function () {
     $('input').iCheck({
@@ -94,6 +104,47 @@
       increaseArea: '20%' // optional
     });
   });
+
+  $('#submitButton').click(function() {
+
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var fullname = document.getElementById('fullname').value;
+  if (firebase.apps.length === 0) {
+      // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA4PEwIYFDGjb9B7HkpT8uGUuh7rEjBEnU",
+      authDomain: "project-impervious.firebaseapp.com",
+      databaseURL: "https://project-impervious.firebaseio.com",
+      projectId: "project-impervious",
+      storageBucket: "project-impervious.appspot.com",
+      messagingSenderId: "792622321559"
+    };
+    firebase.initializeApp(config);
+  }
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage);
+  });
+  localStorage.setItem('email' , email);
+  localStorage.setItem('fullname' , fullname);
+
+  $.ajax({
+  type: "POST",
+  url: "http://52.53.156.47:8080/api/messages",
+  data: null,
+  error : function(xhr,status,error) {
+    console.log(xhr.responseText);
+    console.log(status);
+    console.log(error);
+  }
+});
+
+  location.href = '../../index.html';
+  });
+
+
 </script>
 </body>
 </html>
