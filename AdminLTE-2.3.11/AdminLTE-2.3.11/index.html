@@ -122,7 +122,7 @@ window.addEvent("domready",function(){
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/user.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p id="fullname">
@@ -200,7 +200,7 @@ Ubicaciones</span></a></li>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      <span lang="en">Allergy Pollution - Monitor</span><span lang="es">Contaminación por alergias - Monitor</span>
+      <span lang="en">Allergy Pollutatnt - Monitor</span><span lang="es">Contaminación por alergias - Monitor</span>
         
        
       </h1>
@@ -398,7 +398,15 @@ Registros Hoy</span>
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
+      <center> <ul class="pagination" >
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+          </ul></center>
     <div class="pull-right hidden-xs">
+       
       <b>Version</b> 1.2.0
 
     </div>
@@ -406,11 +414,6 @@ Registros Hoy</span>
 Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
     reserved.</span><span lang="es">Todos los derechos
     reservado.</span>
-
-
-
-
-
     
   </footer>
 
@@ -669,10 +672,9 @@ var chart = Highcharts.chart('pollenChartSanJose', {
 
 });
 
-</script>
 
 
-<script>
+
   $('#fullname').ready(function() {
     var fullname = localStorage.getItem('fullname');
     if(fullname!== undefined && fullname!== null) {
