@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Allergy Monitor | Dashboard</title>
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -20,6 +21,17 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 <script src="http://www.localeplanet.com/api/auto/icu.js"></script>
+<script>
+
+function select_language(language) {
+    $("[lang]").each(function () {
+        if ($(this).attr("lang") == language){
+            $(this).show();}
+        else{
+            $(this).hide();}
+    });
+}
+</script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -61,27 +73,27 @@ window.addEvent("domready",function(){
 	});
 });</script>-->
 </head>
-<<<<<<< HEAD
-<body class="hold-transition skin-blue sidebar-mini">
+
+<body class="hold-transition skin-blue sidebar-mini" onload="select_language('en')">
     <!--<div id="languages"><p>
 	<a href="?lang=en" rel="en">English</a> / <a href="?lang=es" rel="es">Spanish</a> / <a href="?lang=it" rel="it">Italian</a> /
 	<a href="?lang=fr" rel="fr">French</a>
 </p></div>-->
     
 
-=======
 <body id = "body" class="hold-transition skin-blue sidebar-mini">
->>>>>>> 074ed85dae1d1dbd3d3cda6d0a9468beeb59f4dd
+
 <div class="wrapper">
 
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
      
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Allergy </b>Monitoring</span>
+    
+      <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
+      <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -117,8 +129,15 @@ window.addEvent("domready",function(){
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p id="fullname">Hello Guest</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p id="fullname">
+          <span lang="en">Hello Guest</span>
+          <span lang="es">Hola invitado</span>
+          </p>
+
+          <a href="#"><i class="fa fa-circle text-success"></i> 
+          <span lang="en">Online</span>
+          <span lang="es">en línea</span></a>
+
         </div>
       </div>
       <!-- search form -->
@@ -131,25 +150,39 @@ window.addEvent("domready",function(){
               </span>
         </div>
       </form>
+
+
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+
+        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
+
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Home</a></li>
-            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register </a></li>
-            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login </a></li>
-               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> Allergy Stats</a></li>
-                <li id = "notifications" class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> Notifications</a></li>
-            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> Locations</a></li>
-            <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> Log Out</a></li>
+        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+
+            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
+
+            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+            
+               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+Estadísticas de Alergia</span></a></li>
+
+                <li id = "notifications" class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+Notificaciones</span></a></li>
+
+            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+Ubicaciones</span></a></li>
+
+            <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
+            </li>
           </ul>
         </li>
         
@@ -171,14 +204,20 @@ window.addEvent("domready",function(){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Allergy Pollution - Monitor
+      <span lang="en">Allergy Pollution - Monitor</span><span lang="es">Contaminación por alergias - Monitor</span>
+        
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>  <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+        <li class="active"><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
       </ol>
+      
     </section>
+    <select onchange="select_language(this.options[this.selectedIndex].value)">
+          <option value="en" selected ='selected' >English</option>
+          <option value="es">Spanish</option>
+      </select>
 
     <!-- Main content -->
     <section class="content">
@@ -189,7 +228,8 @@ window.addEvent("domready",function(){
             <span class="info-box-icon bg-aqua"><i class="ion ion-person"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total Registerd Users</span>
+              <span class="info-box-text"><span lang="en">Total Registerd Users</span><span lang="es">Usuarios registrados totales</span></span>
+
               <span class="info-box-number">1253</span>
             </div>
             <!-- /.info-box-content -->
@@ -202,8 +242,10 @@ window.addEvent("domready",function(){
             <span class="info-box-icon bg-red"><i class="ion-ios-location"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Current City</span>
-              <span class="info-box-number">San Jose</span>
+              <span class="info-box-text"><span lang="en">Current City</span><span lang="es">ciudad actual</span></span>
+
+              <span class="info-box-number"> <span lang="en">San Jose</span><span lang="es">San Jose</span></span>
+
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -219,8 +261,10 @@ window.addEvent("domready",function(){
             <span class="info-box-icon bg-green"><i class="ion ion-email-unread"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Notifications</span>
-              <span class="info-box-number">Email/SMS</span>
+              <span class="info-box-text"><span lang="en">Notifications</span><span lang="es">Notificaciones</span></span>
+
+              <span class="info-box-number"> <span lang="en">Email/SMS</span><span lang="es">Correo electrónico / SMS</span></span>
+
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -233,6 +277,8 @@ window.addEvent("domready",function(){
 
             <div class="info-box-content">
               <span class="info-box-text">Registrations Today</span>
+               <span lang="en">Registrations Today</span><span lang="es">
+Registros Hoy</span>
               <span class="info-box-number">342</span>
             </div>
             <!-- /.info-box-content -->
@@ -247,8 +293,10 @@ window.addEvent("domready",function(){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Allergy Forecast 
-        <small>Preview </small>
+        
+      <span lang="en">Allergy Forecast </span><span lang="es">Pronóstico de la alergia</span>
+        <small><span lang="en">Preview</span><span lang="es">Avance</span> </small>
+
       </h1>
      
     </section>
@@ -260,8 +308,7 @@ window.addEvent("domready",function(){
           <!-- AREA CHART -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Asthma Pollutants Levels at San Jose</h3>
-
+              <h3 class="box-title"><span lang="en">Asthma Pollutants Levels at San Jose</span><span lang="es">Niveles de contaminantes del asma en San José</span></h3>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -281,7 +328,7 @@ window.addEvent("domready",function(){
           <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Pollen levels at San Jose</h3>
+              <h3 class="box-title"><span lang="en">Pollen levels at San Jose</span><span lang="es">Los niveles de polen en San José</span></h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -302,7 +349,7 @@ window.addEvent("domready",function(){
           <!-- LINE CHART -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Asthma Levels Comparison - Cities</h3>
+              <h3 class="box-title"><span lang="en">Asthma Levels Comparison - Cities</span><span lang="es">Comparación de los niveles de asma - Ciudades</span></h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -322,7 +369,8 @@ window.addEvent("domready",function(){
           <!-- BAR CHART -->
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Pollen Levels Comparison - Cities</h3>
+              <h3 class="box-title"><span lang="en">Pollen Levels Comparison - Cities</span><span lang="es">Comparación de los niveles de polen - Ciudades</span></h3>
+
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -356,9 +404,18 @@ window.addEvent("domready",function(){
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.2.0
+
     </div>
-    <strong>Copyright &copy; 2017 <a href="http://almsaeedstudio.com">Allergy Monitoring - Impervious</a>.</strong> All rights
-    reserved.
+    <strong><span lang="en">Copyright</span><span lang="es">
+Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
+    reserved.</span><span lang="es">Todos los derechos
+    reservado.</span>
+
+
+
+
+
+    
   </footer>
 
   <!-- Control Sidebar -->
@@ -392,19 +449,16 @@ window.addEvent("domready",function(){
 <script src="dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script>
+    
 
 var chart = Highcharts.chart('areaChart', {
 
     title: {
-        text: ''
-    },
-
-    subtitle: {
         text: 'Allergy Levels'
     },
 
@@ -508,6 +562,7 @@ Highcharts.chart('asthmaChart', {
    
  title: {
         text: 'Asthma Pollutants Comparison - Cities'
+
     },
 
 
@@ -618,7 +673,8 @@ var chart = Highcharts.chart('pollenChartSanJose', {
 
 });
 
-=======
+</script>
+
 
 <script>
   $('#fullname').ready(function() {
@@ -671,7 +727,7 @@ var chart = Highcharts.chart('pollenChartSanJose', {
   $('#logout').click(function() {
     localStorage.clear();
   });
->>>>>>> 074ed85dae1d1dbd3d3cda6d0a9468beeb59f4dd
+
 </script>
 </body>
 </html>
