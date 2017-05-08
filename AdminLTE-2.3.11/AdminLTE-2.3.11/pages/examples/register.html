@@ -127,17 +127,43 @@
   });
   localStorage.setItem('email' , email);
   localStorage.setItem('fullname' , fullname);
+  localStorage.setItem('mobile' , '+16692437106');
 
+  var message = 'Congratulations! You are now registered to our Allergy alert system. Stay tuned for updates!!';
+  var obj = {
+    'email' : email,
+    'mobile' : '+16692437106',
+    'userName' : fullname,
+    'message' : message,
+  }
   $.ajax({
   type: "POST",
   url: "http://52.53.156.47:8080/api/messages",
-  data: null,
+  //url: "http://localhost:8080/api/messages",
+ // data: reqBody ,
+ data : obj,
+  dataType : 'json',
   error : function(xhr,status,error) {
     console.log(xhr.responseText);
     console.log(status);
     console.log(error);
   }
 });
+  $.ajax({
+  type: "POST",
+  url: "http://52.53.156.47:8080/api/email",
+  //url: "http://localhost:8080/api/email",
+  data: obj ,
+  dataType : 'json',
+  error : function(xhr,status,error) {
+    console.log(xhr.responseText);
+    console.log(status);
+    console.log(error);
+  }
+});
+
+
+
 
   location.href = '../../index.html';
   });
