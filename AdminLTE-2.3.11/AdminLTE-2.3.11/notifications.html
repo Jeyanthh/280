@@ -39,7 +39,7 @@ font-size: 20px;
 </style>
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" onload="select_language('en')">
 <div class="wrapper">
 
   <header class="main-header">
@@ -48,13 +48,13 @@ font-size: 20px;
       <!-- mini logo for sidebar mini 50x50 pixels -->
   
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Allergy </b>Monitoring System</span>
+      <span class="logo-lg"><b><span lang="en">Allergy Monitoring Systems</span><span lang="es">Sistemas de monitoreo de alergias</span> </b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
+       <span class="sr-only" lang="en">Toggle navigation</span><span class="sr-only" lang="es">Navegación de palanca</span>
       </a>
 
       <div class="navbar-custom-menu">
@@ -66,9 +66,50 @@ font-size: 20px;
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">User</span>
-            </a>
+
+             
+           
          
+
+             <span class="hidden-xs" lang="en">Hello Guest</span>
+          <span  class="hidden-xs" lang="es">Hola invitado</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Guest- Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#"><span lang="en">Followers</span><span lang="es">Seguidores</span></a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#"><span lang="en">Sales</span><span lang="es">Ventas</span></a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#"><span lang="en">Friends</span><span lang="es">Amigos</span></a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat"><span lang="en">Profile</span><span lang="es">perfil</span></a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat"><span lang="en">Sign Out</span><span lang="es">desconectar</span></a>
+                </div>
+              </li>
+            </ul>
+
           </li>
           <!-- Control Sidebar Toggle Button -->
           
@@ -86,8 +127,15 @@ font-size: 20px;
             <img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/user.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>User</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
+        
+        
+
+          <p><span lang="en">Hello Guest</span>
+          <span lang="es">Hola invitado</span></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> <span lang="en">Online</span>
+          <span lang="es">en línea</span></a>
+
         </div>
       </div>
       <!-- search form -->
@@ -103,20 +151,23 @@ font-size: 20px;
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
            <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Home</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Register / Login</a></li>
-               <li><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> Allergy Stats</a></li>
-                <li class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> Notifications</a></li>
-            <li><a href="locations.html"><i class="fa fa-circle-o"></i> Locations</a></li>
+        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span>/ <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+               <li><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+Estadísticas de Alergia</span></a></li>
+                <li class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> <span lang="en">Notifications</span><span lang="es">
+Notificaciones</span></a></li>
+            <li><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+Ubicaciones</span></a></li>
           </ul>
         </li>
        
@@ -136,7 +187,16 @@ font-size: 20px;
     <!-- Content Header (Page header) -->
     <section class="content-header">
      
+
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> <span lang="en">Home</span><span lang="es">casa</span></a></li>
+        <li class="active"><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
+      </ol>
     </section>
+    <select onchange ="select_language(this.options[this.selectedIndex].value)">
+  <option value="en" selected>English</option>
+  <option value="es">Spanish</option>
+</select>
 
     <!-- Main content -->
     <section class="content">
@@ -146,14 +206,14 @@ font-size: 20px;
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>Alert</h3>
+              <h3><span lang="en">Alert</span><span lang="es">alerta</span></h3>
 
-              <p>Email</p>
+              <p><span lang="en">Email</span><span lang="es">correo electrónico</span></p>
             </div>
             <div class="icon">
               <i class="ion ion-email"></i>
             </div>
-            <a href="#row1" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#row1" class="small-box-footer"><span lang="en">More Info</span><span lang="es">más información</span> <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -161,14 +221,14 @@ font-size: 20px;
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>Alert<sup style="font-size: 20px"></sup></h3>
+              <h3><span lang="en">Alert</span><span lang="es">alerta</span><sup style="font-size: 20px"></sup></h3>
 
-              <p>SMS</p>
+              <p><span lang="en">sms</span><span lang="es">sms</span></p>
             </div>
             <div class="icon">
             <i class="ion ion-android-textsms"></i>
             </div>
-            <a href="#row2" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#row2" class="small-box-footer"><span lang="en">More Info</span><span lang="es">más información</span> <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -176,14 +236,14 @@ font-size: 20px;
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>Alert</h3>
+              <h3><span lang="en">Alert</span><span lang="es">alerta</span></h3>
 
-              <p>Stats</p>
+              <p><span lang="en">Stats</span><span lang="es">Estadísticas</span></p>
             </div>
             <div class="icon">
               <i class="ion-ios-pulse"></i>
             </div>
-            <a href="/LiveForecast.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/LiveForecast.html" class="small-box-footer"><span lang="en">More Info</span><span lang="es">más información</span><i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -196,9 +256,13 @@ font-size: 20px;
            <div class="col-md-8"><img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/email.jpg"  style="width:600px; height:300px"></div>
        <div class="col-md-4">
            <div id ="content">
-               <h2> Email Notification</h2>
+               <h2> <span lang="en">Email Notification</span><span lang="es">
+Notificación de correo electrónico</span></h2>
                <p>
-               We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies. Your current email id is <input type="text" id ="email" readonly>
+               <span lang="en">We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies. Your current email id is </span><span lang="es">
+
+Estamos dando a los usuarios una característica impresionante para ser notificado siempre que el nivel de alergia en la atmósfera está más allá de los límites permisibles. Ahora puede recibir notificaciones basadas en su ubicación y alergias. Tu ID de correo electrónico actual es</span>
+               <input type="text" id ="email" readonly>
                
                </p>
            
@@ -216,10 +280,14 @@ font-size: 20px;
            <div id="row2" onclick="window.location.hash='back';" style="padding:2cm;" >
       <div class="col-md-8"><img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/sms.jpg" style="width:600px; height:300px"></div>
        <div class="col-md-4"> <div id ="content">
-          <h2> SMS Notification</h2>
+          <h2> <span lang="en">sms Notification</span><span lang="es">
+Notificación sms</span></h2>
                <p>
-               We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies.
-               Your current phone number is <input type="text" id ="email" readonly>
+               <span lang="en">We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies.
+               Your current phone number is </span><span lang="es">
+Estamos dando a los usuarios una característica impresionante para ser notificado siempre que el nivel de alergia en la atmósfera está más allá de los límites permisibles. Ahora puede recibir notificaciones basadas en su ubicación y alergias.
+               Su número de teléfono actual es</span>
+               <input type="text" id ="email" readonly>
                </p>
            </div>
  
@@ -234,10 +302,14 @@ font-size: 20px;
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.1.0
+      <b>Version</b> 1.2.0
+
     </div>
-    <strong>Copyright &copy; 2017 <a href="http://almsaeedstudio.com">Team Impervious - Allergy Monitoring</a>.</strong> All rights
-    reserved.
+    <strong><span lang="en">Copyright</span><span lang="es">
+Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
+    reserved.</span><span lang="es">Todos los derechos
+    reservado.</span>
+    
   </footer>
 
   <!-- Control Sidebar -->
@@ -430,6 +502,16 @@ font-size: 20px;
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<script>
+function select_language(language) {
+    $("[lang]").each(function () {
+        if ($(this).attr("lang") == language)
+            $(this).show();
+        else
+            $(this).hide();
+    });
+}
+</script>
 
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -468,5 +550,6 @@ font-size: 20px;
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </body>
 </html>
