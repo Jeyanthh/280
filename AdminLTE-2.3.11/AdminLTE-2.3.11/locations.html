@@ -174,77 +174,43 @@ function select_language(language) {
 <body class="hold-transition skin-blue sidebar-mini" onload="select_language('en')">
 <div class="wrapper">
 
-  <header class="main-header">
+    <header class="main-header">
+
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-  
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b><span lang="en">Allergy Monitoring Systems</span><span lang="es">Sistemas de monitoreo de alergias</span> </b></span>
+     
+    
+      <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
+      <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
     </a>
+
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-       
-        <span class="sr-only" lang="en">Toggle navigation</span><span class="sr-only" lang="es">Navegación de palanca</span>
-      </a>
-
+      
+      <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-      
-    
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-             
-              <span class="hidden-xs" lang="en">Hello Guest</span>
-          <span  class="hidden-xs" lang="es">Hola invitado</span></p>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          
+               <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
+          <option value="en" selected ='selected' >English</option>
+          <option value="es">Spanish</option>
+      </select>
 
-                <p>
-                  Guest - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#"><span lang="en">Followers</span><span lang="es">Seguidores</span></a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#"><span lang="en">Sales</span><span lang="es">Ventas</span></a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#"><span lang="en">Friends</span><span lang="es">Amigos</span></a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat"><span lang="en">Profile</span><span lang="es">perfil</span></a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat"><span lang="en">Sign Out</span><span lang="es">desconectar</span></a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+           
+        
+        
+       
+          <!-- User Account: style can be found in dropdown.less -->
+         
+          <!-- Control Sidebar Toggle Button --><br>
+            
+        
         </ul>
       </div>
+
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
@@ -324,10 +290,7 @@ Ubicaciones</span></a></li>
         <li class="active"><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
       </ol>
     </section>
-    <select onchange ="select_language(this.options[this.selectedIndex].value)">
-  <option value="en" selected>English</option>
-  <option value="es">Spanish</option>
-</select>
+    
 
     <!-- Main content -->
     <section class="content">
@@ -442,13 +405,13 @@ Hospitales</span></p>
     <!-- /.content -->
   </div><br><br><br>
   <!-- /.content-wrapper -->
- <footer class="main-footer">
+<footer class="main-footer">
       <center> <ul class="pagination" >
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
+  <li><a href="#index.html">1</a></li>
+  <li><a href="/LiveForecast.html">2</a></li>
+  <li><a href="/notifications.html">3</a></li>
+  <li><a href="/locations.html">4</a></li>
+  <li><a href="/pages/examples/register.html ">5 </a></li>
           </ul></center>
     <div class="pull-right hidden-xs">
        

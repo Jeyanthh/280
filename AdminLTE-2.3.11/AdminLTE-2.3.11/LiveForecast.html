@@ -30,17 +30,15 @@
 <body class="hold-transition skin-blue sidebar-mini" onload="select_language('en')">
 <div class="wrapper">
 
-  <header class="main-header">
+    <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
      
-      <!-- logo for regular state and mobile devices -->
+    
       <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
-      <span class="logo-lg" lang="es"><b>Control de la alergia</b></span>
-
-     
+      <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -51,16 +49,21 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          
+               <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
+          <option value="en" selected ='selected' >English</option>
+          <option value="es">Spanish</option>
+      </select>
+
            
-           
-          </li>
+        
         
        
           <!-- User Account: style can be found in dropdown.less -->
          
-          <!-- Control Sidebar Toggle Button -->
-         
+          <!-- Control Sidebar Toggle Button --><br>
+            
+        
         </ul>
       </div>
 
@@ -152,10 +155,7 @@ Avance</span> </small>
      
 
     </section>
-    <select onchange ="select_language(this.options[this.selectedIndex].value)">
-  <option value="en" selected>English</option>
-  <option value="es">Spanish</option>
-</select>
+   
 
     <!-- Main content -->
       <section class="content">
@@ -254,8 +254,16 @@ Avance</span> </small>
   <!-- /.content-wrapper -->
 
   
-  <footer class="main-footer">
+ <footer class="main-footer">
+      <center> <ul class="pagination" >
+  <li><a href="#index.html">1</a></li>
+  <li><a href="/LiveForecast.html">2</a></li>
+  <li><a href="/notifications.html">3</a></li>
+  <li><a href="/locations.html">4</a></li>
+  <li><a href="/pages/examples/register.html ">5 </a></li>
+          </ul></center>
     <div class="pull-right hidden-xs">
+       
       <b>Version</b> 1.2.0
 
     </div>

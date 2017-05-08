@@ -100,16 +100,21 @@ window.addEvent("domready",function(){
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          
+               <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
+          <option value="en" selected ='selected' >English</option>
+          <option value="es">Spanish</option>
+      </select>
+
            
-           
-          </li>
+        
         
        
           <!-- User Account: style can be found in dropdown.less -->
          
-          <!-- Control Sidebar Toggle Button -->
-         
+          <!-- Control Sidebar Toggle Button --><br>
+            
+        
         </ul>
       </div>
 
@@ -210,11 +215,7 @@ Ubicaciones</span></a></li>
       </ol>
       
     </section>
-    <select onchange="select_language(this.options[this.selectedIndex].value)">
-          <option value="en" selected ='selected' >English</option>
-          <option value="es">Spanish</option>
-      </select>
-
+    
     <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
@@ -399,11 +400,11 @@ Registros Hoy</span>
 
   <footer class="main-footer">
       <center> <ul class="pagination" >
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
+  <li><a href="#index.html">1</a></li>
+  <li><a href="/LiveForecast.html">2</a></li>
+  <li><a href="/notifications.html">3</a></li>
+  <li><a href="/locations.html">4</a></li>
+  <li><a href="/pages/examples/register.html ">5 </a></li>
           </ul></center>
     <div class="pull-right hidden-xs">
        
