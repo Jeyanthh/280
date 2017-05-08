@@ -29,45 +29,50 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <style>
-    #map {
-        margin-left: 80px;
-        padding: 10em;
-  height: 500px;
-        width: 800px;;
-}</style>
+
+
 <script>
-var map;
+var map,map1;
 var infowindow;
 
 function initMap() {
    var lat = '';
     var lng = '';
-    var address = "chennai";
-var pyrmont;
-    pyrmont = {lat: -33.867, lng: 151.195};
+    var temp = document.getElementById('city').value;
+    
+    if(temp == 1) {
+    	lat = 37.368832 ;
+    	lng = -122.036346;
+    }
+    else if (temp==2){
+    	lat = 37.773972 ;
+    	lng = -122.431297;
+
+    } else if (temp==3){
+    	lat = 30.2669444 ;
+    	lng = -97.7427778;
+    	
+    } else if (temp==4){
+    	lat = 40.7141667 ;
+    	lng = -74.0063889;
+    	
+    } else {
+    	lat = 41.8781136 ;
+    	lng = -87.6297982;
+
+    }
+	var pyrmont;
+    pyrmont = {lat: lat, lng: lng};
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: pyrmont,
     zoom: 15
   });
-    var geocoder;
-     geocoder = new google.maps.Geocoder();
-     
-    geocoder.geocode( { 'address': address}, function(results, status)
-    {
-        if (status == google.maps.GeocoderStatus.OK)
-        {
-            
-
-            pyrmont = {lat:results[0].geometry.location.lat(),lng:results[0].geometry.location.lng()}
-        }
-        else
-        {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-    });
-
+  map1 = new google.maps.Map(document.getElementById('map1'), {
+    center: pyrmont,
+    zoom: 15
+  });
+    
 
 
 
@@ -78,11 +83,39 @@ var pyrmont;
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: pyrmont,
-    radius: 500,
-    type: ['hospital','health']
+    radius: 1500,
+    type: ['hospital']
   }, callback);
+
+  var service1 = new google.maps.places.PlacesService(map1);
+  service.nearbySearch({
+    location: pyrmont,
+    radius: 1500,
+    type: ['Pharmacies']
+  }, callback1);
 }
 
+function callback1(results,status) {
+	if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker1(results[i]);
+    }
+  }
+
+}
+
+function createMarker1(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map1,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map1, this);
+  });
+}
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -90,11 +123,25 @@ function callback(results, status) {
     }
   }
 }
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    icon : "/images/hospital.png",
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
+    icon : "/images/pharmacy.png",
     position: place.geometry.location
   });
 
@@ -104,6 +151,7 @@ function createMarker(place) {
   });
 }
 </script>
+
 <script>
 function select_language(language) {
     $("[lang]").each(function () {
@@ -350,31 +398,44 @@ Hospitales</span></p>
         <!-- ./col -->
       </div>
       <!-- /.row -->
+
+    <!-- Main content -->
+      <div class="row">
+        <!-- Left col -->
+        <div class = "col-xs-12" > 
+        <p class="text-center"><h3 class="text-center">Select City 
+        <select id="city" onchange = "initMap()">
+  			<option value="1">San Jose</option>
+  			<option value="2">San Francisco</option>
+  			<option value="3">Austin</option>
+  			<option value="4">New York</option>
+  			<option value="5">Chicago</option>
+			</select></h3></p>
+
+
+
+        </div>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        
+        <!-- right col -->
+      </div>
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-7 connectedSortable">
-         <div id="map"></div>
-        </section>
+        <div class = "col-xs-6"  style="height:600px;"> 
+        	<h2><p class="text-center">Hospitals in the Locality</p></h2>
+        	<div id = "map" style="height:600px;">
+
+
+        	</div>
+         </div>
+         <div class = "col-xs-6" style="height:600px;"> 
+         <h2><p class="text-center">Pharmacies in the Locality</p></h2>
+        	<div id = "map1" style="height:600px;"></div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
-
-          <!-- Map box -->
-       
-            
-            <div class="box-body">
-              
-            </div>
-            <!-- /.box-body-->
-          
-       
-
-          <!-- /.box -->
-
-          <!-- /.box -->
-
-        </section>
+        
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
