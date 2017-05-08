@@ -127,7 +127,7 @@ window.addEvent("domready",function(){
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/user.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p id="fullname">
@@ -167,7 +167,7 @@ window.addEvent("domready",function(){
             </span>
           </a>
           <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
 
             <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
 
@@ -176,7 +176,7 @@ window.addEvent("domready",function(){
                <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
 Estadísticas de Alergia</span></a></li>
 
-                <li id = "notifications" class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+                <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
 Notificaciones</span></a></li>
 
             <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
@@ -205,13 +205,13 @@ Ubicaciones</span></a></li>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      <span lang="en">Allergy Pollutatnt - Monitor</span><span lang="es">Contaminación por alergias - Monitor</span>
+      <span lang="en">Allergy Pollution - Monitor</span><span lang="es">Contaminación por alergias - Monitor</span>
         
        
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>  <span lang="en">Home</span><span lang="es">Casa</span></a></li>
-        <li class="active"><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
+        <li ><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
       </ol>
       
     </section>
@@ -399,6 +399,7 @@ Registros Hoy</span>
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
+
       <center> <ul class="pagination" >
   <li><a href="#index.html">1</a></li>
   <li><a href="/LiveForecast.html">2</a></li>
@@ -406,8 +407,8 @@ Registros Hoy</span>
   <li><a href="/locations.html">4</a></li>
   <li><a href="/pages/examples/register.html ">5 </a></li>
           </ul></center>
+
     <div class="pull-right hidden-xs">
-       
       <b>Version</b> 1.2.0
 
     </div>
@@ -415,6 +416,11 @@ Registros Hoy</span>
 Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
     reserved.</span><span lang="es">Todos los derechos
     reservado.</span>
+
+
+
+
+
     
   </footer>
 
@@ -673,9 +679,10 @@ var chart = Highcharts.chart('pollenChartSanJose', {
 
 });
 
+</script>
 
 
-
+<script>
   $('#fullname').ready(function() {
     var fullname = localStorage.getItem('fullname');
     if(fullname!== undefined && fullname!== null) {
