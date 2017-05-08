@@ -48,13 +48,13 @@ font-size: 20px;
       <!-- mini logo for sidebar mini 50x50 pixels -->
   
       <!-- logo for regular state and mobile devices -->
-       <span class="logo-lg"><b><span lang="en">Allergy Monitoring Systems</span><span lang="es">Sistemas de monitoreo de alergias</span> </b></span>
+      <span class="logo-lg"><b>Allergy </b>Monitoring System</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-         <span class="sr-only" lang="en">Toggle navigation</span><span class="sr-only" lang="es">Navegación de palanca</span>
+        <span class="sr-only">Toggle navigation</span>
       </a>
 
       <div class="navbar-custom-menu">
@@ -64,19 +64,51 @@ font-size: 20px;
     
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            
-           a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs"><p id = "name"> Alexander Pierce </p></p></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-             
-           
-         
-
-             <span class="hidden-xs" lang="en">Hello Guest</span>
-          <span  class="hidden-xs" lang="es">Hola invitado</span>
-            </li>
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
             </ul>
-       
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -87,14 +119,11 @@ font-size: 20px;
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-     <img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/user.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-         < p><span lang="en">Hello Guest</span>
-          <span lang="es">Hola invitado</span></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> <span lang="en">Online</span>
-          <span lang="es">en línea</span></a>
-
+          <p>Alexander Pierce</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
@@ -110,23 +139,20 @@ font-size: 20px;
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
+        <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
-   <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
-              <span class="pull-right-container">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-             <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span>/ <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
-               <li><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
-Estadísticas de Alergia</span></a></li>
-                <li class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> <span lang="en">Notifications</span><span lang="es">
-Notificaciones</span></a></li>
-            <li><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
-Ubicaciones</span></a></li>
+           <ul class="treeview-menu">
+        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Register / Login</a></li>
+               <li><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> Allergy Stats</a></li>
+                <li class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> Notifications</a></li>
+            <li><a href="locations.html"><i class="fa fa-circle-o"></i> Locations</a></li>
           </ul>
         </li>
        
@@ -144,18 +170,14 @@ Ubicaciones</span></a></li>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-      <section class="content-header">
+    <section class="content-header">
      
-
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span lang="en">Home</span><span lang="es">casa</span></a></li>
-        <li class="active"><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
       </ol>
-    </section>  
-       <select onchange ="select_language(this.options[this.selectedIndex].value)">
-  <option value="en" selected>English</option>
-  <option value="es">Spanish</option>
-</select>
+    </section>
+
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -217,7 +239,7 @@ Ubicaciones</span></a></li>
                <h2> Email Notification</h2>
                <p>
                We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies. Your current email id is <input type="text" id ="email" readonly>
-               
+               <button type = "button" id = "emailButton"> Send</button>
                </p>
            
                
@@ -233,11 +255,12 @@ Ubicaciones</span></a></li>
       </div>
            <div id="row2" onclick="window.location.hash='back';" style="padding:2cm;" >
       <div class="col-md-8"><img src="G:/SAN JOSE/Sem 4/280/Project/AdminLTE-2.3.11/AdminLTE-2.3.11/images/sms.jpg" style="width:600px; height:300px"></div>
-       <div class="col-md-4"> <div id ="content">
+       <div class="col-md-4"> <div id ="content1">
           <h2> SMS Notification</h2>
                <p>
                We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies.
-               Your current phone number is <input type="text" id ="email" readonly>
+               Your current phone number is <input type="text" id ="sms" readonly>
+                 <button type = "button" id = "smsButton"> Send</button>
                </p>
            </div>
  
@@ -456,6 +479,77 @@ Ubicaciones</span></a></li>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+
+  $('#name').ready( function() {
+    $('#name').val(localStorage.getItem('fullname'));
+  }
+  );
+    $('#sms').ready( function() {
+    var sms = localStorage.getItem('mobile');
+    sms = '+16692437106';
+    console.log(sms);
+    $('#sms').val(sms);
+  }
+  );
+
+  $('#email').ready( function() {
+  console.log(email);
+    var email = localStorage.getItem('email');
+    $('#email').val(email);
+  }
+  );
+
+  $('#smsButton').click( function() {
+  var email = localStorage.getItem('email');
+  var fullname = localStorage.getItem('fullname');
+  var message = 'Pollen Alert with data';
+  var obj = {
+    'email' : email,
+    'mobile' : '+16692437106',
+    'userName' : fullname,
+    'message' : message,
+  };
+  $.ajax({
+  type: "POST",
+  url: "http://52.53.156.47:8080/api/messagesAlert",
+  //url: "http://localhost:8080/api/messagesAlert",
+ // data: reqBody ,
+ data : obj,
+  dataType : 'json',
+  error : function(xhr,status,error) {
+    console.log(xhr.responseText);
+    console.log(status);
+    console.log(error);
+  }
+});
+
+  });
+
+  $('#emailButton').click(function() {
+    var email = localStorage.getItem('email');
+  var fullname = localStorage.getItem('fullname');
+  var message = 'Congratulations! You are now registered to our Allergy alert system. Stay tuned for updates!!';
+  var obj = {
+    'email' : email,
+    'mobile' : '+16692437106',
+    'userName' : fullname,
+    'message' : message,
+  };
+    $.ajax({
+  type: "POST",
+  url: "http://52.53.156.47:8080/api/emailAlert",
+  //url: "http://localhost:8080/api/emailAlert",
+  data: obj ,
+  dataType : 'json',
+  //Allow-Control-Allow-Origin: '*',
+  error : function(xhr,status,error) {
+    console.log(xhr.responseText);
+    console.log(status);
+    console.log(error);
+  }
+});
+
+  });
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -486,5 +580,6 @@ Ubicaciones</span></a></li>
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
 </body>
 </html>
