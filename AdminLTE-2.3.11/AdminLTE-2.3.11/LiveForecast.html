@@ -35,9 +35,9 @@
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-     
 
-    
+
+
       <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
       <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
 
@@ -49,32 +49,33 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      
+
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          
+
                <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
           <option value="en" selected ='selected' >English</option>
           <option value="es">Spanish</option>
       </select>
 
-           
-        
-        
-       
+
+
+
+
           <!-- User Account: style can be found in dropdown.less -->
-         
+
           <!-- Control Sidebar Toggle Button --><br>
-            
-        
+
+
         </ul>
       </div>
 
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
+
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -99,67 +100,64 @@
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
+                </div>
+            </form>
 
-        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
+
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+
+                <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
+                <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
 
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
 
-            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
+                        <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
 
-            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
-            
-               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+                        <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+
+                        <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
 Estadísticas de Alergia</span></a></li>
 
-                <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+                        <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
 Notificaciones</span></a></li>
 
-            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+                        <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
 Ubicaciones</span></a></li>
 
-            <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
-            </li>
-          </ul>
-        </li>
-        
-        <li>
-         
-        </li>
-        
-        
-      
-      
-       
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+                        <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-   
+
       <h1>
  <span lang="en">Allergy Forecast </span><span lang="es">Pronóstico de la alergia</span>
         <small><span lang="en">Preview</span><span lang="es">Avance</span> </small>
 
-       
+
       </h1>
-     
+
 
     </section>
 
@@ -182,7 +180,7 @@ Ubicaciones</span></a></li>
             <div class="box-body">
               <div class="chart">
                 <div id="areaChart" style="height:250px"></div>
-                
+
               </div>
             </div>
             <!-- /.box-body -->
@@ -261,7 +259,7 @@ Ubicaciones</span></a></li>
   <!-- /.content-wrapper -->
 
 
-  
+
  <footer class="main-footer">
 
       <center> <ul class="pagination" >
@@ -282,12 +280,12 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
     reservado.</span>
   </footer>
 
-    
-   
- 
+
+
+
 
   <!-- Control Sidebar -->
-  
+
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -440,7 +438,7 @@ $(document).ready(function () {
 <script>
 Highcharts.chart('asthmaChart', {
 
-   
+
  title: {
         text: 'Asthma Pollutants Comparison - Cities'
     },
@@ -553,6 +551,56 @@ var chart = Highcharts.chart('pollenChartSanJose', {
 
 });
 
+  $('#fullname').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname!== undefined && fullname!== null) {
+      $('#fullname').text('Hello ' + fullname);
+    }
+  });
+
+  $('#locations').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#locations').hide();
+    }
+  });
+
+  $('#register').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname) {
+      $('#register').hide();
+    }
+  });
+
+  $('#login').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname) {
+      $('#login').hide();
+    }
+  });
+
+  $('#liveforecast').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#liveforecast').hide();
+    }
+  });
+
+  $('#notifications').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#notifications').hide();
+    }
+  });
+  $('#logout').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#logout').hide();
+    }
+  });
+  $('#logout').click(function() {
+    localStorage.clear();
+  });
 </script>
 
 

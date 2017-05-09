@@ -44,7 +44,7 @@ function initMap() {
    var lat = '';
     var lng = '';
     var temp = document.getElementById('city').value;
-    
+
     if(temp == 1) {
     	lat = 37.368832 ;
     	lng = -122.036346;
@@ -56,11 +56,11 @@ function initMap() {
     } else if (temp==3){
     	lat = 30.2669444 ;
     	lng = -97.7427778;
-    	
+
     } else if (temp==4){
     	lat = 40.7141667 ;
     	lng = -74.0063889;
-    	
+
     } else {
     	lat = 41.8781136 ;
     	lng = -87.6297982;
@@ -77,12 +77,12 @@ function initMap() {
     center: pyrmont,
     zoom: 15
   });
-    
 
 
 
 
-  
+
+
 
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
@@ -114,7 +114,7 @@ function createMarker1(place) {
   var marker = new google.maps.Marker({
     map: map1,
     position: place.geometry.location,
-      icon:"images/pharmacy.png" 
+      icon:"images/pharmacy.png"
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -149,8 +149,8 @@ function createMarker(place) {
     map: map,
 
     position: place.geometry.location,
-    
-      icon:"images/hospital.png" 
+
+      icon:"images/hospital.png"
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -158,6 +158,8 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
+
+
 </script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -176,9 +178,9 @@ function createMarker(place) {
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-     
 
-    
+
+
       <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
       <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
 
@@ -190,32 +192,33 @@ function createMarker(place) {
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      
+
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          
+
                <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
           <option value="en" selected ='selected' >English</option>
           <option value="es">Spanish</option>
       </select>
 
-           
-        
-        
-       
+
+
+
+
           <!-- User Account: style can be found in dropdown.less -->
-         
+
           <!-- Control Sidebar Toggle Button --><br>
-            
-        
+
+
         </ul>
       </div>
 
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
+
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -239,54 +242,57 @@ function createMarker(place) {
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-       <ul class="sidebar-menu">
+                </div>
+            </form>
 
-        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
+
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+
+                <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
+                <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
 
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
 
-            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
+                        <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
 
-            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
-            
-               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+                        <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+
+                        <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
 Estadísticas de Alergia</span></a></li>
 
-                <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+                        <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
 Notificaciones</span></a></li>
 
-            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+                        <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
 Ubicaciones</span></a></li>
 
-            <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
-            </li>
-          </ul>
-        </li>
-        
-        <li>
-         
-        </li>
-        
-        
-      
-      
-       
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+                        <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+
+                </li>
+
+
+
+
+
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -376,8 +382,8 @@ Hospitales</span></p>
     <!-- Main content -->
       <div class="row">
         <!-- Left col -->
-        <div class = "col-xs-12" > 
-        <p class="text-center"><h3 class="text-center"><span lang="en">Select City </span><span lang="es">Ciudad selecta</span> 
+        <div class = "col-xs-12" >
+        <p class="text-center"><h3 class="text-center"><span lang="en">Select City </span><span lang="es">Ciudad selecta</span>
         <select id="city" onchange = "initMap()">
   			<option value="1">San Jose</option>
   			<option value="2">San Francisco</option>
@@ -391,27 +397,27 @@ Hospitales</span></p>
         </div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        
+
         <!-- right col -->
-      
+
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <div class = "col-xs-6"  style="padding:2em;"> 
+        <div class = "col-xs-6"  style="padding:2em;">
         	<h2><p class="text-center"><span lang="en">Hospitals in the Locality</span><span lang="es">Hospitales en la localidad</span> </p></h2>
         	<div id = "map" style="height:600px; width:450px">
 
 
         	</div>
          </div>
-         <div class = "col-xs-6" style="padding:2em;"> 
+         <div class = "col-xs-6" style="padding:2em;">
          <h2><p class="text-center"><span lang="en">Pharmacies in the Locality</span><span lang="es">Farmacias en la localidad</span></p></h2>
         	<div id = "map1" style="height:600px; width:450px "></div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        
+
         <!-- right col -->
- 
+
     </section>
     <!-- /.content -->
   </div>
@@ -445,7 +451,7 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
-    
+
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
@@ -487,12 +493,63 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmpawlSRKQXOnL2X2CmH4hr-PrEx88334&libraries=places&callback=initMap" async defer></script>
     <script>
+
+      $('#fullname').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname!== undefined && fullname!== null) {
+      $('#fullname').text('Hello ' + fullname);
+    }
+  });
+
+  $('#locations').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#locations').hide();
+    }
+  });
+
+  $('#register').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname) {
+      $('#register').hide();
+    }
+  });
+
+  $('#login').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname) {
+      $('#login').hide();
+    }
+  });
+
+  $('#liveforecast').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#liveforecast').hide();
+    }
+  });
+
+  $('#notifications').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#notifications').hide();
+    }
+  });
+  $('#logout').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#logout').hide();
+    }
+  });
+  $('#logout').click(function() {
+    localStorage.clear();
+  });
+
 function select_language(language) {
     $("[lang]").each(function () {
         if ($(this).attr("lang") == language)
@@ -501,6 +558,8 @@ function select_language(language) {
             $(this).hide();
     });
 }
+
+
 </script>
 </body>
 </html>

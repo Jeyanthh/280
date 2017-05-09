@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Allergy Monitoring System</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-<link href="http://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Allergy Monitoring System</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css" />
 
-<style>
-#content {
-font-family: 'lobster', serif;
-font-size: 20px;
-}
-</style>
+    <style>
+        #content {
+        font-family: 'lobster', serif;
+        font-size: 20px;
+        }
+        #emailButton{
+        background:    #3d85c6;
+        background:    -webkit-linear-gradient(#3d85c6, #073763);
+        background:    linear-gradient(#3d85c6, #073763);
+        border-radius: 5px;
+        color:         #ffffff;
+        display:       inline-block;
+        font:          normal 700 24px/1 "Calibri", sans-serif;
+        text-align:    center;
+        text-shadow:   1px 1px #000000;
+        }
+        #smsButton{
+        background:    #3d85c6;
+        background:    -webkit-linear-gradient(#3d85c6, #073763);
+        background:    linear-gradient(#3d85c6, #073763);
+        border-radius: 5px;
+        color:         #ffffff;
+        display:       inline-block;
+        font:          normal 700 24px/1 "Calibri", sans-serif;
+        text-align:    center;
+        text-shadow:   1px 1px #000000;
+        }
+
+
+    </style>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini" onload="select_language('en')">
@@ -44,120 +68,124 @@ font-size: 20px;
 
     <header class="main-header">
 
-    <!-- Logo -->
-    <a href="#" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-     
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
 
-    
-      <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
-      <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
 
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Allergy </b>Monitoring</span>
 
-    </a>
+            <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
+            <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          
-               <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
-          <option value="en" selected ='selected' >English</option>
-          <option value="es">Spanish</option>
-      </select>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Allergy </b>Monitoring</span>
 
-           
-        
-        
-       
-          <!-- User Account: style can be found in dropdown.less -->
-         
-          <!-- Control Sidebar Toggle Button --><br>
-            
-        
-        </ul>
-      </div>
+        </a>
 
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
- <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
 
-          <p><span lang="en">Hello Guest</span>
-          <span lang="es">Hola invitado</span></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> <span lang="en">Online</span>
-          <span lang="es">en línea</span></a>
-         
-          
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
 
-        </div>
-      </div>
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
+                    <option value="en" selected ='selected' >English</option>
+                    <option value="es">Spanish</option>
+                </select>
+
+
+
+
+
+                    <!-- User Account: style can be found in dropdown.less -->
+
+                    <!-- Control Sidebar Toggle Button --><br>
+
+
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p id="fullname">
+                        <span lang="en">Hello Guest</span>
+                        <span lang="es">Hola invitado</span>
+                    </p>
+
+                    <a href="#"><i class="fa fa-circle text-success"></i>
+                        <span lang="en">Online</span>
+                        <span lang="es">en línea</span></a>
+
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-       <ul class="sidebar-menu">
+                </div>
+            </form>
 
-        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
+
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+
+                <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
+                <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
 
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
 
-            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
+                        <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
 
-            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
-            
-               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+                        <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+
+                        <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
 Estadísticas de Alergia</span></a></li>
 
-                <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+                        <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
 Notificaciones</span></a></li>
 
-            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+                        <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
 Ubicaciones</span></a></li>
+
 
             <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
             </li>
           </ul>
         </li>
-        
+
         <li>
-         
+
         </li>
-        
-        
-      
-      
-       
+
+
+
+
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -167,11 +195,11 @@ Ubicaciones</span></a></li>
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 
-   
+
 
     <section class="content-header">
 
-     
+
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>  <span lang="en">Home</span><span lang="es">Casa</span></a></li>
         <li ><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
@@ -228,7 +256,7 @@ Ubicaciones</span></a></li>
           </div>
         </div>
         <!-- ./col -->
-        
+
         <!-- ./col -->
       </div>
       <!-- /.row -->
@@ -239,55 +267,54 @@ Ubicaciones</span></a></li>
            <div id ="content">
                <h2> <span lang="en">Email Notification</span><span lang="es">
 Notificación de correo electrónico</span></h2>
-               <p>
+                        <p>
 
-               <span lang="en">We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies. Your current email id is </span><span lang="es">
+                            <span lang="en">We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies. Your current email id is </span><span lang="es">
 
 Estamos dando a los usuarios una característica impresionante para ser notificado siempre que el nivel de alergia en la atmósfera está más allá de los límites permisibles. Ahora puede recibir notificaciones basadas en su ubicación y alergias. Tu ID de correo electrónico actual es</span>
-               <input type="text" id ="email" readonly>
-                <button type = "button" id = "emailButton"> <span lang="en">Send</span><span lang="es">enviar</span></button>
+                            <input type="text" id ="email" readonly>
+                            <br>
+                            <input type ="checkbox" value="Notify me when threshold reaches"/>Notify me when threshold reaches
+                            <button  type = "button" id = "emailButton"> <span lang="en">Send Allergy Report</span><span lang="es">enviar</span></button>
 
-             
-              
+                        </p>
 
-               </p>
-           
-               
-           
-           </div>
-               
-               
-               
-               </div>
-          </div><div class="row3" style="pading:50px;">
-       
-      </div>
-      <div id="row2" onclick="window.location.hash='back';" style="padding:2cm;" >
-      <div class="col-md-8"><img src="images/sms.jpg" style="width:600px; height:300px"></div>
 
-       <div class="col-md-4"> <div id ="content">
-          <h2> <span lang="en">SMS Notification</span><span lang="es">
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div id="row2" onclick="window.location.hash='back';" style="padding:2cm;" >
+                <div class="col-md-8"><img src="images/sms.jpg" style="width:600px; height:300px"></div>
+
+                <div class="col-md-4"> <div id ="content">
+                    <h2> <span lang="en">SMS Notification</span><span lang="es">
 Notificación SMS</span></h2>
-               <p>
+                    <p>
                <span lang="en">We are giving the users an awesome feature to get notified whenever the allergy level in the atmosphere is beyond the permissible limits. You can now get notified based on your location and allergies.
                Your current phone number is </span><span lang="es">
 Estamos dando a los usuarios una característica impresionante para ser notificado siempre que el nivel de alergia en la atmósfera está más allá de los límites permisibles. Ahora puede recibir notificaciones basadas en su ubicación y alergias.
                Su número de teléfono actual es</span>
-          s <input type="text" id ="sms" readonly>
-                 <button type = "button" id = "smsButton"> <span lang="en">Send</span><span lang="es">enviar</span></button>
+               
+                         <input type="text" id ="sms" readonly>
+                        <br>
+                        <input type ="checkbox" value="Notify me when threshold reaches"/>Notify me when threshold reaches
+                        <button type = "button" id = "smsButton"> <span lang="en">Send Allergy Report</span><span lang="es">enviar</span></button>
+                    </p>
+                </div>
 
-               </p>
-           </div>
- 
-      </div> 
-        </div></section>
-           
+                </div>
+            </div></section>
+
+        <!-- /.row (main row) -->
+
+
       <!-- /.row (main row) -->
 
-    </section>
-    <!-- /.content -->
-      </div>
-<!-- /.content-wrapper -->
+
  <footer class="main-footer">
 
       <center> <ul class="pagination" >
@@ -301,11 +328,29 @@ Estamos dando a los usuarios una característica impresionante para ser notifica
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.2.0
 
+        </section>
+        <!-- /.content -->
     </div>
-    <strong><span lang="en">Copyright</span><span lang="es">
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+
+        <center> <ul class="pagination" >
+            <li><a href="index.html">1</a></li>
+            <li><a href="LiveForecast.html">2</a></li>
+            <li><a href="notifications.html">3</a></li>
+            <li><a href="locations.html">4</a></li>
+            <li><a href="pages/examples/register.html ">5 </a></li>
+        </ul></center>
+
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 1.2.0
+
+        </div>
+        <strong><span lang="en">Copyright</span><span lang="es">
 Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
     reserved.</span><span lang="es">Todos los derechos
     reservado.</span>
+
   </footer>
 
         <aside class="control-sidebar control-sidebar-dark">
@@ -418,85 +463,189 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
             </a>
           </li>
         </ul>
-        <!-- /.control-sidebar-menu -->
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-user bg-yellow"></i>
 
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
+                                <p>New phone +1(800)555-1234</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
 
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
+                                <p>nora@example.com</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
 
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
 
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
+                                <p>Execution time 5 seconds</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-          <!-- /.form-group -->
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="label label-danger pull-right">70%</span>
+                            </h4>
 
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-          <!-- /.form-group -->
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Update Resume
+                                <span class="label label-success pull-right">95%</span>
+                            </h4>
 
-         
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-       </aside></div>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
- 
-      
-  <!-- Control Sidebar -->
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Laravel Integration
+                                <span class="label label-warning pull-right">50%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Back End Framework
+                                <span class="label label-primary pull-right">68%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Allow mail redirect
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Other sets of options are available
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Expose author name in posts
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Allow the user to show his name in blog posts
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Show me as online
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Turn off notifications
+                            <input type="checkbox" class="pull-right">
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside></div>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+
+
+<!-- Control Sidebar -->
 
 <!-- ./wrapper -->
 <script>
@@ -516,6 +665,56 @@ function select_language(language) {
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+  $('#fullname').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname!== undefined && fullname!== null) {
+      $('#fullname').text('Hello ' + fullname);
+    }
+  });
+
+  $('#locations').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#locations').hide();
+    }
+  });
+
+  $('#register').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname) {
+      $('#register').hide();
+    }
+  });
+
+  $('#login').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(fullname) {
+      $('#login').hide();
+    }
+  });
+
+  $('#liveforecast').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#liveforecast').hide();
+    }
+  });
+
+  $('#notifications').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#notifications').hide();
+    }
+  });
+  $('#logout').ready(function() {
+    var fullname = localStorage.getItem('fullname');
+    if(!fullname) {
+      $('#logout').hide();
+    }
+  });
+  $('#logout').click(function() {
+    localStorage.clear();
+  });
 
   $('#name').ready( function() {
     $('#name').val(localStorage.getItem('fullname'));
