@@ -113,7 +113,8 @@ function createMarker1(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map1,
-    position: place.geometry.location
+    position: place.geometry.location,
+      icon:"images/pharmacy.png" 
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -147,7 +148,9 @@ function createMarker(place) {
   var marker = new google.maps.Marker({
     map: map,
 
-    position: place.geometry.location
+    position: place.geometry.location,
+    
+      icon:"images/hospital.png" 
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -222,8 +225,10 @@ function createMarker(place) {
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p><span lang="en">Hello Guest</span>
+          <span lang="es">Hola invitado</span></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> <span lang="en">Online</span>
+          <span lang="es">en línea</span></a>
         </div>
       </div>
       <!-- search form -->
@@ -372,7 +377,7 @@ Hospitales</span></p>
       <div class="row">
         <!-- Left col -->
         <div class = "col-xs-12" > 
-        <p class="text-center"><h3 class="text-center">Select City 
+        <p class="text-center"><h3 class="text-center"><span lang="en">Select City </span><span lang="es">Ciudad selecta</span> 
         <select id="city" onchange = "initMap()">
   			<option value="1">San Jose</option>
   			<option value="2">San Francisco</option>
@@ -392,16 +397,16 @@ Hospitales</span></p>
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <div class = "col-xs-6"  style="height:600px;"> 
-        	<h2><p class="text-center">Hospitals in the Locality</p></h2>
-        	<div id = "map" style="height:600px;">
+        <div class = "col-xs-6"  style="padding:2em;"> 
+        	<h2><p class="text-center"><span lang="en">Hospitals in the Locality</span><span lang="es">Hospitales en la localidad</span> </p></h2>
+        	<div id = "map" style="height:600px; width:450px">
 
 
         	</div>
          </div>
-         <div class = "col-xs-6" style="height:600px;"> 
-         <h2><p class="text-center">Pharmacies in the Locality</p></h2>
-        	<div id = "map1" style="height:600px;"></div>
+         <div class = "col-xs-6" style="padding:2em;"> 
+         <h2><p class="text-center"><span lang="en">Pharmacies in the Locality</span><span lang="es">Farmacias en la localidad</span></p></h2>
+        	<div id = "map1" style="height:600px; width:450px "></div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         
@@ -413,15 +418,16 @@ Hospitales</span></p>
   <!-- /.content-wrapper -->
 
  <footer class="main-footer">
+
       <center> <ul class="pagination" >
-  <li><a href="#index.html">1</a></li>
-  <li><a href="/LiveForecast.html">2</a></li>
-  <li><a href="/notifications.html">3</a></li>
-  <li><a href="/locations.html">4</a></li>
-  <li><a href="/pages/examples/register.html">  </a></li>
+  <li><a href="index.html">1</a></li>
+  <li><a href="LiveForecast.html">2</a></li>
+  <li><a href="notifications.html">3</a></li>
+  <li><a href="locations.html">4</a></li>
+  <li><a href="pages/examples/register.html ">5 </a></li>
           </ul></center>
+
     <div class="pull-right hidden-xs">
-       
       <b>Version</b> 1.2.0
 
     </div>
@@ -429,7 +435,6 @@ Hospitales</span></p>
 Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
     reserved.</span><span lang="es">Todos los derechos
     reservado.</span>
-    
   </footer>
 
   <!-- Control Sidebar -->
@@ -440,181 +445,7 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-         
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
+    
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
