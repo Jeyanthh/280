@@ -86,8 +86,8 @@ window.addEvent("domready",function(){
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-
-
+     
+    
       <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
       <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
     </a>
@@ -95,26 +95,26 @@ window.addEvent("domready",function(){
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-
+      
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-
+          
                <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
           <option value="en" selected ='selected' >English</option>
           <option value="es">Spanish</option>
       </select>
 
-
-
-
-
+           
+        
+        
+       
           <!-- User Account: style can be found in dropdown.less -->
-
+         
           <!-- Control Sidebar Toggle Button --><br>
-
-
+            
+        
         </ul>
       </div>
 
@@ -135,7 +135,7 @@ window.addEvent("domready",function(){
           <span lang="es">Hola invitado</span>
           </p>
 
-          <a href="#"><i class="fa fa-circle text-success"></i>
+          <a href="#"><i class="fa fa-circle text-success"></i> 
           <span lang="en">Online</span>
           <span lang="es">en línea</span></a>
 
@@ -172,7 +172,7 @@ window.addEvent("domready",function(){
             <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
 
             <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
-
+            
                <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
 Estadísticas de Alergia</span></a></li>
 
@@ -186,15 +186,15 @@ Ubicaciones</span></a></li>
             </li>
           </ul>
         </li>
-
+        
         <li>
-
+         
         </li>
-
-
-
-
-
+        
+        
+      
+      
+       
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -206,16 +206,16 @@ Ubicaciones</span></a></li>
     <section class="content-header">
       <h1>
       <span lang="en">Allergy Pollution - Monitor</span><span lang="es">Contaminación por alergias - Monitor</span>
-
-
+        
+       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>  <span lang="en">Home</span><span lang="es">Casa</span></a></li>
         <li ><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
       </ol>
-
+      
     </section>
-
+    
     <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
@@ -273,7 +273,7 @@ Ubicaciones</span></a></li>
             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Registrations Today</span>
+              
                <span lang="en">Registrations Today</span><span lang="es">
 Registros Hoy</span>
               <span class="info-box-number">342</span>
@@ -290,12 +290,12 @@ Registros Hoy</span>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-
+        
       <span lang="en">Allergy Forecast </span><span lang="es">Pronóstico de la alergia</span>
         <small><span lang="en">Preview</span><span lang="es">Avance</span> </small>
 
       </h1>
-
+     
     </section>
 
     <!-- Main content -->
@@ -315,7 +315,7 @@ Registros Hoy</span>
             <div class="box-body">
               <div class="chart">
                 <div id="areaChart" style="height:250px"></div>
-
+                
               </div>
             </div>
             <!-- /.box-body -->
@@ -400,12 +400,12 @@ Registros Hoy</span>
 
   <footer class="main-footer">
 
-  <center> <ul class="pagination" >
-  <li><a href="#index.html">1</a></li>
-  <li><a href="/LiveForecast.html">2</a></li>
-  <li><a href="/notifications.html">3</a></li>
-  <li><a href="/locations.html">4</a></li>
-  <li><a href="/pages/examples/register.html ">5 </a></li>
+      <center> <ul class="pagination" >
+  <li><a href="index.html">1</a></li>
+  <li><a href="LiveForecast.html">2</a></li>
+  <li><a href="notifications.html">3</a></li>
+  <li><a href="locations.html">4</a></li>
+  <li><a href="pages/examples/register.html ">5 </a></li>
           </ul></center>
 
     <div class="pull-right hidden-xs">
@@ -416,12 +416,6 @@ Registros Hoy</span>
 Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span lang="en">Allergy Monitoring </span><span lang="es">Control de la alergia</span> - Impervious</a>.</strong> <span lang="en">All rights
     reserved.</span><span lang="es">Todos los derechos
     reservado.</span>
-
-
-
-
-
-
   </footer>
 
   <!-- Control Sidebar -->
@@ -460,7 +454,7 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script>
-
+    
 
 var chart = Highcharts.chart('areaChart', {
 
@@ -480,7 +474,9 @@ var chart = Highcharts.chart('areaChart', {
     }]
 
 });
+
 </script>
+
 
 <script>
 
@@ -563,7 +559,7 @@ $(document).ready(function () {
 <script>
 Highcharts.chart('asthmaChart', {
 
-
+   
  title: {
         text: 'Asthma Pollutants Comparison - Cities'
 
