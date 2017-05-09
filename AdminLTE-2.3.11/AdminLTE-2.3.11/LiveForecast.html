@@ -30,34 +30,44 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <header class="main-header">
+    <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-     
+
+
+      <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
+      <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
+
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Allergy </b>Monitoring</span>
+
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      
+
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-           
-           
-          </li>
-        
-       
+
+               <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
+          <option value="en" selected ='selected' >English</option>
+          <option value="es">Spanish</option>
+      </select>
+
+
+
+
+
           <!-- User Account: style can be found in dropdown.less -->
-         
-          <!-- Control Sidebar Toggle Button -->
-         
+
+          <!-- Control Sidebar Toggle Button --><br>
+
+
         </ul>
       </div>
 
@@ -90,7 +100,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -99,22 +109,35 @@
             </span>
           </a>
           <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Home</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Register / Login</a></li>
-               <li><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> Allergy Stats</a></li>
-                <li class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> Notifications</a></li>
-            <li><a href="locations.html"><i class="fa fa-circle-o"></i> Locations</a></li>
+
+        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+
+            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
+
+            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+
+               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+Estadísticas de Alergia</span></a></li>
+
+                <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+Notificaciones</span></a></li>
+
+            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+Ubicaciones</span></a></li>
+
+            <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
+            </li>
           </ul>
         </li>
-        
+
         <li>
-         
+
         </li>
-    
-        
-      
-      
-       
+
+
+
+
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -124,14 +147,18 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-   
+
       <h1>
-        Allergy Forecast 
+        Allergy Forecast
         <small>Preview </small>
       </h1>
-     
+
 
     </section>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/final
 
     <!-- Main content -->
       <section class="content">
@@ -151,7 +178,7 @@
             <div class="box-body">
               <div class="chart">
                 <div id="areaChart" style="height:250px"></div>
-                
+
               </div>
             </div>
             <!-- /.box-body -->
@@ -229,8 +256,24 @@
   </div>
   <!-- /.content-wrapper -->
 
+<<<<<<< HEAD
+=======
+
+
+ <footer class="main-footer">
+      <center> <ul class="pagination" >
+  <li><a href="#index.html">1</a></li>
+  <li><a href="/LiveForecast.html">2</a></li>
+  <li><a href="/notifications.html">3</a></li>
+  <li><a href="/locations.html">4</a></li>
+  <li><a href="/pages/examples/register.html ">5 </a></li>
+          </ul></center>
+
+>>>>>>> origin/final
   <footer class="main-footer">
+
     <div class="pull-right hidden-xs">
+
       <b>Version</b> 1.2.0
     </div>
     <strong>Copyright &copy; 2017 <a href="http://almsaeedstudio.com">Allergy Monitoring - Impervious</a>.</strong> All rights
@@ -238,7 +281,7 @@
   </footer>
 
   <!-- Control Sidebar -->
-  
+
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -272,6 +315,19 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<<<<<<< HEAD
+=======
+    <script>
+function select_language(language) {
+    $("[lang]").each(function () {
+        if ($(this).attr("lang") == language)
+            $(this).show();
+        else
+            $(this).hide();
+    });
+}
+</script>
+>>>>>>> origin/final
 <script>
 
 var chart = Highcharts.chart('areaChart', {
@@ -381,7 +437,7 @@ $(document).ready(function () {
 <script>
 Highcharts.chart('asthmaChart', {
 
-   
+
  title: {
         text: 'Asthma Pollutants Comparison - Cities'
     },

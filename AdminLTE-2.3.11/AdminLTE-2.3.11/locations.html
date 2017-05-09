@@ -53,12 +53,12 @@ var pyrmont;
   });
     var geocoder;
      geocoder = new google.maps.Geocoder();
-     
+
     geocoder.geocode( { 'address': address}, function(results, status)
     {
         if (status == google.maps.GeocoderStatus.OK)
         {
-            
+
 
             pyrmont = {lat:results[0].geometry.location.lat(),lng:results[0].geometry.location.lng()}
         }
@@ -72,7 +72,7 @@ var pyrmont;
 
 
 
-  
+
 
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
@@ -95,6 +95,20 @@ function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
+
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
     position: place.geometry.location
   });
 
@@ -104,6 +118,7 @@ function createMarker(place) {
   });
 }
 </script>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -115,74 +130,34 @@ function createMarker(place) {
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <header class="main-header">
+     <header class="main-header">
+
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-  
+
+
+
+      <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
+      <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Allergy </b>Monitoring System</span>
+      <span class="logo-lg"><b>Allergy </b>Monitoring</span>
     </a>
+
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-      
-    
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+               <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
+          <option value="en" selected ='selected' >English</option>
+          <option value="es">Spanish</option>
+      </select>   
         </ul>
       </div>
+
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
@@ -211,27 +186,61 @@ function createMarker(place) {
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
+<<<<<<< HEAD
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+=======
+       <ul class="sidebar-menu">
+
+        <li class="header"><span lang="en">MAIN NAVIGATION</span><span lang="es">NAVEGACIÓN PRINCIPAL</span></li>
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span lang="en">Dashboard</span><span lang="es">Tablero</span>
+
+>>>>>>> origin/final
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Allergy Forecast</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
                 <li class="active"><a href="notifications.html"><i class="fa fa-circle-o"></i> Notifications</a></li>
             <li><a href="locations.html"><i class="fa fa-circle-o"></i> Locations</a></li>
+=======
+        <li ><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Home</span><span lang="es">Casa</span></a></li>
+
+            <li id = "register"><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> <span lang="en">Register</span><span lang="es">Registro</span> </a></li>
+
+            <li id = "login"><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> <span lang="en">Login</span><span lang="es">Iniciar sesión</span> </a></li>
+
+               <li id = "liveforecast"><a href="LiveForecast.html"><i class="fa fa-circle-o"></i> <span lang="en">Allergy Stats</span><span lang="es">
+Estadísticas de Alergia</span></a></li>
+
+                <li id = "notifications" ><a href="notifications.html"><i class="fa fa-circle-o"></i>  <span lang="en">Notifications</span><span lang="es">
+Notificaciones</span></a></li>
+
+            <li id = "locations"><a href="locations.html"><i class="fa fa-circle-o"></i> <span lang="en">Locations</span><span lang="es">
+Ubicaciones</span></a></li>
+
+            <li id = "logout"><a href="index.html"><i class="fa fa-circle-o"></i> <span lang="en">Log Out</span><span lang="es">Cerrar sesión</span></a>
+            </li>
+>>>>>>> origin/final
           </ul>
         </li>
-       
-       
-       
-      
-       
+
+        <li>
+
+        </li>
+
+
+
+
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -240,19 +249,27 @@ function createMarker(place) {
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+       <section class="content-header">
       <h1>
         Dashboard
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
+<<<<<<< HEAD
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
+=======
+        <li><a href="#"><i class="fa fa-dashboard"></i> <span lang="en">Home</span><span lang="es">casa</span></a></li>
+        <li ><span lang="en">Dashboard</span><span lang="es">Tablero</span></li>
+      </ol>
+    </section>
+
+>>>>>>> origin/final
 
     <!-- Main content -->
-    <section class="content">
+      <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
@@ -304,9 +321,13 @@ function createMarker(place) {
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>27 &deg;C</h3>
 
+<<<<<<< HEAD
               <p>Trend</p>
+=======
+              <p><span lang="en">San Jose</span><span lang="es">tendencia</span></p>
+>>>>>>> origin/final
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -328,14 +349,14 @@ function createMarker(place) {
         <section class="col-lg-5 connectedSortable">
 
           <!-- Map box -->
-       
-            
+
+
             <div class="box-body">
-              
+
             </div>
             <!-- /.box-body-->
-          
-       
+
+
 
           <!-- /.box -->
 
@@ -350,7 +371,19 @@ function createMarker(place) {
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<<<<<<< HEAD
   <footer class="main-footer">
+=======
+
+ <footer class="main-footer">
+      <center> <ul class="pagination" >
+  <li><a href="#index.html">1</a></li>
+  <li><a href="/LiveForecast.html">2</a></li>
+  <li><a href="/notifications.html">3</a></li>
+  <li><a href="/locations.html">4</a></li>
+  <li><a href="/pages/examples/register.html">  </a></li>
+          </ul></center>
+>>>>>>> origin/final
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.8
     </div>
@@ -535,7 +568,7 @@ function createMarker(place) {
           </div>
           <!-- /.form-group -->
 
-         
+
           <!-- /.form-group -->
         </form>
       </div>
@@ -587,5 +620,15 @@ function createMarker(place) {
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmpawlSRKQXOnL2X2CmH4hr-PrEx88334&libraries=places&callback=initMap" async defer></script>
+    <script>
+function select_language(language) {
+    $("[lang]").each(function () {
+        if ($(this).attr("lang") == language)
+            $(this).show();
+        else
+            $(this).hide();
+    });
+}
+</script>
 </body>
 </html>
