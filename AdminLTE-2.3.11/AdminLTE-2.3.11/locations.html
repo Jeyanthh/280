@@ -44,7 +44,7 @@ function initMap() {
    var lat = '';
     var lng = '';
     var temp = document.getElementById('city').value;
-    
+
     if(temp == 1) {
     	lat = 37.368832 ;
     	lng = -122.036346;
@@ -56,11 +56,11 @@ function initMap() {
     } else if (temp==3){
     	lat = 30.2669444 ;
     	lng = -97.7427778;
-    	
+
     } else if (temp==4){
     	lat = 40.7141667 ;
     	lng = -74.0063889;
-    	
+
     } else {
     	lat = 41.8781136 ;
     	lng = -87.6297982;
@@ -77,12 +77,12 @@ function initMap() {
     center: pyrmont,
     zoom: 15
   });
-    
 
 
 
 
-  
+
+
 
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
@@ -114,7 +114,7 @@ function createMarker1(place) {
   var marker = new google.maps.Marker({
     map: map1,
     position: place.geometry.location,
-      icon:"images/pharmacy.png" 
+      icon:"images/pharmacy.png"
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -149,8 +149,8 @@ function createMarker(place) {
     map: map,
 
     position: place.geometry.location,
-    
-      icon:"images/hospital.png" 
+
+      icon:"images/hospital.png"
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -178,9 +178,9 @@ function createMarker(place) {
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-     
 
-    
+
+
       <span class="logo-lg" lang="en"><b>Allergy </b>Monitoring</span>
       <span class="logo-lg" lang="es">Control de la<b> alergia</b></span>
 
@@ -192,57 +192,52 @@ function createMarker(place) {
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      
+
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          
+
                <b>Language: </b><select onchange="select_language(this.options[this.selectedIndex].value)">
           <option value="en" selected ='selected' >English</option>
           <option value="es">Spanish</option>
       </select>
 
-           
-        
-        
-       
+
+
+
+
           <!-- User Account: style can be found in dropdown.less -->
-         
+
           <!-- Control Sidebar Toggle Button --><br>
-            
-        
+
+
         </ul>
       </div>
 
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p id="fullname">
-                        <span lang="en">Hello Guest</span>
-                        <span lang="es">Hola invitado</span>
-                    </p>
 
-                    <a href="#"><i class="fa fa-circle text-success"></i>
-                        <span lang="en">Online</span>
-                        <span lang="es">en línea</span></a>
-
-                </div>
-            </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p><span lang="en">Hello Guest</span>
+          <span lang="es">Hola invitado</span></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> <span lang="en">Online</span>
+          <span lang="es">en línea</span></a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
@@ -387,8 +382,8 @@ Hospitales</span></p>
     <!-- Main content -->
       <div class="row">
         <!-- Left col -->
-        <div class = "col-xs-12" > 
-        <p class="text-center"><h3 class="text-center"><span lang="en">Select City </span><span lang="es">Ciudad selecta</span> 
+        <div class = "col-xs-12" >
+        <p class="text-center"><h3 class="text-center"><span lang="en">Select City </span><span lang="es">Ciudad selecta</span>
         <select id="city" onchange = "initMap()">
   			<option value="1">San Jose</option>
   			<option value="2">San Francisco</option>
@@ -402,27 +397,27 @@ Hospitales</span></p>
         </div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        
+
         <!-- right col -->
-      
+
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <div class = "col-xs-6"  style="padding:2em;"> 
+        <div class = "col-xs-6"  style="padding:2em;">
         	<h2><p class="text-center"><span lang="en">Hospitals in the Locality</span><span lang="es">Hospitales en la localidad</span> </p></h2>
         	<div id = "map" style="height:600px; width:450px">
 
 
         	</div>
          </div>
-         <div class = "col-xs-6" style="padding:2em;"> 
+         <div class = "col-xs-6" style="padding:2em;">
          <h2><p class="text-center"><span lang="en">Pharmacies in the Locality</span><span lang="es">Farmacias en la localidad</span></p></h2>
         	<div id = "map1" style="height:600px; width:450px "></div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        
+
         <!-- right col -->
- 
+
     </section>
     <!-- /.content -->
   </div>
@@ -456,7 +451,7 @@ Derechos de autor</span> &copy; 2017 <a href="http://almsaeedstudio.com"><span l
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
-    
+
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
