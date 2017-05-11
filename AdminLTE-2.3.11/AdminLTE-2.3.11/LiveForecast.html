@@ -19,6 +19,510 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script>
+        
+
+
+$(document).ready(function () {
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
+
+    Highcharts.chart('container13', {
+        chart: {
+            type: 'spline',
+            animation: Highcharts.svg, // don't animate in old IE
+            marginRight: 10,
+         events: {
+            load: function () {
+                var x =  Date.UTC(2017, 4, 12);
+                // set up the updating of the chart each second
+                var series = this.series[0];
+                var series1 = this.series[1];
+				var series2 = this.series[2];
+				var series3 = this.series[3];
+				var series4 = this.series[4];
+                setInterval(function () {
+                    x+=86400000;
+                     var   y = Math.round(Math.random() * 100)/10;
+                    console.log(x+","+y);
+                    series.addPoint([x, y], true, true);
+                    series1.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series2.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series3.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series4.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+                }, 5000);
+            }
+        }
+    },
+    
+        title: {
+            text: ' '
+        },
+       
+        xAxis: {
+          type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+            month: '%e. %b',
+            year: '%b'
+        },
+            labels: {
+            offset:'100',
+        },
+        title: {
+            text: 'Date'
+        }
+        },
+        yAxis: {
+            title: {
+                text: 'Severity Level'
+            },
+            max: 10,
+            min:0,
+            
+        },
+        
+        legend: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: 
+		[
+		{
+        name: 'New York',
+        pointRange : 5,
+        // Define the data points. All series have a dummy year
+        // of 1970/71 in order to be compared on the same x axis. Note
+        // that in JavaScript, months start at 0 for January, 1 for February etc.
+        data: [
+            [Date.UTC(2017, 4, 7), 9.8],
+            [Date.UTC(2017, 4, 8), 9],
+            [Date.UTC(2017, 4, 9), 9.6],
+            [Date.UTC(2017, 4, 10), 10.8],
+            [Date.UTC(2017, 4, 11), 10.5],
+            [Date.UTC(2017, 4, 12), 9.5],
+            [Date.UTC(2017, 4, 13), 4.4],
+            [Date.UTC(2017, 4, 14), 8],
+            [Date.UTC(2017, 4, 15), 9.4],
+            [Date.UTC(2017, 4, 16), 10.0],
+            [Date.UTC(2017, 4, 17), 11.1],
+            [Date.UTC(2017, 4, 18), 10.3],
+            [Date.UTC(2017, 4, 19), 8],
+            [Date.UTC(2017, 4, 20), 10.5],
+            [Date.UTC(2017, 4, 21), 4.5],
+            [Date.UTC(2017, 4, 22), 4.5],
+            [Date.UTC(2017, 4, 23), 7.5],
+            [Date.UTC(2017, 4, 24), 7.2],
+            [Date.UTC(2017, 4, 25), 7.5],
+            [Date.UTC(2017, 4, 26), 7.0],
+            [Date.UTC(2017, 4, 27), 7.1],
+            [Date.UTC(2017, 4, 28), 6.3],
+            [Date.UTC(2017, 4, 29), 7.7],
+            [Date.UTC(2017, 4, 30), 6],
+            [Date.UTC(2017, 5, 1), 2.4],
+            [Date.UTC(2017, 5, 2), 6.1],
+        ]
+    }, 
+	{
+        name: 'Chicago',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 4.1],
+            [Date.UTC(2017, 4, 8), 8.6],
+            [Date.UTC(2017, 4, 9), 8.7],
+            [Date.UTC(2017, 4, 10), 8.9],
+            [Date.UTC(2017, 4, 11), 8.2],
+            [Date.UTC(2017, 4, 12), 4.2],
+            
+            [Date.UTC(2017, 4, 13), 8.8],
+            [Date.UTC(2017, 4, 14), 9.0],
+            [Date.UTC(2017, 4, 15), 7.8],
+            [Date.UTC(2017, 4, 16), 7.0],
+            [Date.UTC(2017, 4, 17), 8],
+            [Date.UTC(2017, 4, 18), 8.4],
+            [Date.UTC(2017, 4, 19), 7.3],
+            [Date.UTC(2017, 4, 20), 8.9],
+            [Date.UTC(2017, 4, 21), 8.2],
+            [Date.UTC(2017, 4, 22), 7.4],
+            [Date.UTC(2017, 4, 23), 7.3],
+            [Date.UTC(2017, 4, 24), 7.3],
+            [Date.UTC(2017, 4, 25), 6.4],
+            [Date.UTC(2017, 4, 26), 7.1],
+            [Date.UTC(2017, 4, 27), 7.5],
+            [Date.UTC(2017, 4, 28), 7.1],
+            [Date.UTC(2017, 4, 29), 6.7],
+            [Date.UTC(2017, 4, 30), 6.8],
+            [Date.UTC(2017, 5, 1), 6.9],
+            [Date.UTC(2017, 5, 2), 7],
+        ]
+    },
+    {
+        name: 'Austin',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 8.2],
+            [Date.UTC(2017, 4, 8), 6.6],
+            [Date.UTC(2017, 4, 9), 8],
+            [Date.UTC(2017, 4, 10), 8],
+            [Date.UTC(2017, 4, 11), 6],
+            [Date.UTC(2017, 4, 12), 4.8],
+
+
+            [Date.UTC(2017, 4, 13), 6.0],
+            [Date.UTC(2017, 4, 14), 5.3],
+            [Date.UTC(2017, 4, 15), 2.0],
+            [Date.UTC(2017, 4, 16), 4.9],
+            [Date.UTC(2017, 4, 17), 6],
+            [Date.UTC(2017, 4, 18), 6.8],
+            [Date.UTC(2017, 4, 19), 6.1],
+            [Date.UTC(2017, 4, 20), 7.2],
+            [Date.UTC(2017, 4, 21), 6.4],
+            [Date.UTC(2017, 4, 22), 6.9],
+            [Date.UTC(2017, 4, 23), 6.9],
+            [Date.UTC(2017, 4, 24), 6.1],
+            [Date.UTC(2017, 4, 25), 6.0],
+            [Date.UTC(2017, 4, 26), 4.7],
+            [Date.UTC(2017, 4, 27), 4.3],
+            [Date.UTC(2017, 4, 28), 4.9],
+            [Date.UTC(2017, 4, 29), 5.0],
+            [Date.UTC(2017, 4, 30), 4.3],
+            [Date.UTC(2017, 5, 1), 6.0],
+            [Date.UTC(2017, 5, 2), 5.7],
+
+        ]
+    },
+    {
+        name: 'San Francisco',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 3.5],
+            [Date.UTC(2017, 4, 8), 3.5],
+            [Date.UTC(2017, 4, 9), 3.6],
+            [Date.UTC(2017, 4, 10), 3.7],
+            [Date.UTC(2017, 4, 11), 3.8],
+            [Date.UTC(2017, 4, 12), 4],
+
+
+            [Date.UTC(2017, 4, 13), 5.1],
+            [Date.UTC(2017, 4, 14), 4.0],
+            [Date.UTC(2017, 4, 15), 6.0],
+            [Date.UTC(2017, 4, 16), 6.8],
+            [Date.UTC(2017, 4, 17), 5],
+            [Date.UTC(2017, 4, 18), 5.0],
+            [Date.UTC(2017, 4, 19), 6.5],
+            [Date.UTC(2017, 4, 20), 5.9],
+            [Date.UTC(2017, 4, 21), 7.2],
+            [Date.UTC(2017, 4, 22), 6.0],
+            [Date.UTC(2017, 4, 23), 5.8],
+            [Date.UTC(2017, 4, 24), 5.7],
+            [Date.UTC(2017, 4, 25), 5.9],
+            [Date.UTC(2017, 4, 26), 4.8],
+            [Date.UTC(2017, 4, 27), 5.6],
+            [Date.UTC(2017, 4, 28), 5.0],
+            [Date.UTC(2017, 4, 29), 5.9],
+            [Date.UTC(2017, 4, 30), 4.2],
+            [Date.UTC(2017, 5, 1), 5.0],
+            [Date.UTC(2017, 5, 2), 5.2],
+        ]
+    },
+    {
+        name: 'San Jose',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 7],
+            [Date.UTC(2017, 4, 8), 6.9],
+            [Date.UTC(2017, 4, 9), 6.9],
+            [Date.UTC(2017, 4, 10), 6.1],
+            [Date.UTC(2017, 4, 11), 6],
+            [Date.UTC(2017, 4, 12), 4.7],
+
+
+            [Date.UTC(2017, 4, 13), 4.3],
+            [Date.UTC(2017, 4, 14), 4.9],
+            [Date.UTC(2017, 4, 15), 5.0],
+            [Date.UTC(2017, 4, 16), 4.3],
+            [Date.UTC(2017, 4, 17), 6],
+            [Date.UTC(2017, 4, 18), 8.0],
+            [Date.UTC(2017, 4, 19), 8.0],
+            [Date.UTC(2017, 4, 20), 5.0],
+            [Date.UTC(2017, 4, 21), 4.5],
+            [Date.UTC(2017, 4, 22), 4.5],
+            [Date.UTC(2017, 4, 23), 7.5],
+            [Date.UTC(2017, 4, 24), 7.2],
+            [Date.UTC(2017, 4, 25), 7.5],
+            [Date.UTC(2017, 4, 26), 7.0],
+            [Date.UTC(2017, 4, 27), 7.1],
+            [Date.UTC(2017, 4, 28), 6.3],
+            [Date.UTC(2017, 4, 29), 7.7],
+            [Date.UTC(2017, 4, 30), 6.0],
+            [Date.UTC(2017, 5, 1), 2.4],
+            [Date.UTC(2017, 5, 2), 6.1],
+        ]
+    }
+    
+
+
+    ]
+});
+
+    });
+
+    </script>
+  <script>
+        
+
+
+$(document).ready(function () {
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
+
+    Highcharts.chart('container12', {
+        chart: {
+            type: 'spline',
+            animation: Highcharts.svg, // don't animate in old IE
+            marginRight: 10,
+         events: {
+            load: function () {
+                var x =  Date.UTC(2017, 4, 12);
+                // set up the updating of the chart each second
+                var series = this.series[0];
+                var series1 = this.series[1];
+				var series2 = this.series[2];
+				var series3 = this.series[3];
+				var series4 = this.series[4];
+				
+                setInterval(function () {
+                    x+=86400000;
+                     var   y = Math.round(Math.random() * 100)/10;
+                    console.log(x+","+y);
+                    series.addPoint([x, y], true, true);
+                    series1.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series2.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series3.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series4.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+                }, 5000);
+            }
+        }
+    },
+    
+        title: {
+            text: ' '
+        },
+       
+        xAxis: {
+          type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+            month: '%e. %b',
+            year: '%b'
+        },
+            labels: {
+            offset:'100',
+        },
+        title: {
+            text: 'Date'
+        }
+        },
+        yAxis: {
+            title: {
+                text: 'Severity Level'
+            },
+            max: 10,
+            min:0,
+            
+        },
+        
+        legend: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: 
+		[
+		{
+        name: 'New York',
+        pointRange : 5,
+        // Define the data points. All series have a dummy year
+        // of 1970/71 in order to be compared on the same x axis. Note
+        // that in JavaScript, months start at 0 for January, 1 for February etc.
+        data: [
+            [Date.UTC(2017, 4, 7), 6],
+            [Date.UTC(2017, 4, 8), 6.1],
+            [Date.UTC(2017, 4, 9), 7.7],
+            [Date.UTC(2017, 4, 10), 8],
+            [Date.UTC(2017, 4, 11), 8.4],
+            [Date.UTC(2017, 4, 12), 8],
+            [Date.UTC(2017, 4, 13), 8.1],
+            [Date.UTC(2017, 4, 14), 8],
+            [Date.UTC(2017, 4, 15), 7.7],
+            [Date.UTC(2017, 4, 16), 8.2],
+            [Date.UTC(2017, 4, 17), 8.5],
+            [Date.UTC(2017, 4, 18), 8],
+            [Date.UTC(2017, 4, 19), 8],
+            [Date.UTC(2017, 4, 20), 5.0],
+            [Date.UTC(2017, 4, 21), 4.5],
+            [Date.UTC(2017, 4, 22), 4.5],
+            [Date.UTC(2017, 4, 23), 7.5],
+            [Date.UTC(2017, 4, 24), 7.2],
+            [Date.UTC(2017, 4, 25), 7.5],
+            [Date.UTC(2017, 4, 26), 7.0],
+            [Date.UTC(2017, 4, 27), 7.1],
+            [Date.UTC(2017, 4, 28), 6.3],
+            [Date.UTC(2017, 4, 29), 7.7],
+            [Date.UTC(2017, 4, 30), 6],
+            [Date.UTC(2017, 5, 1), 2.4],
+            [Date.UTC(2017, 5, 2), 6.1],
+            
+        ]
+    }, 
+	{
+        name: 'Chicago',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 6.8],
+            [Date.UTC(2017, 4, 8), 7],
+            [Date.UTC(2017, 4, 9), 8.1],
+            [Date.UTC(2017, 4, 10), 8.9],
+            [Date.UTC(2017, 4, 11), 8.2],
+            [Date.UTC(2017, 4, 12), 8],
+            [Date.UTC(2017, 4, 13), 4.9],
+            [Date.UTC(2017, 4, 14), 7],
+            [Date.UTC(2017, 4, 15), 7.8],
+            [Date.UTC(2017, 4, 16), 7.6],
+            [Date.UTC(2017, 4, 17), 8.3],
+            [Date.UTC(2017, 4, 18), 8.2],
+            [Date.UTC(2017, 4, 19), 6.6],
+            [Date.UTC(2017, 4, 20), 8],
+            [Date.UTC(2017, 4, 21), 8],
+            [Date.UTC(2017, 4, 22), 6],
+            [Date.UTC(2017, 4, 23), 4.8],
+            [Date.UTC(2017, 4, 24), 6],
+            [Date.UTC(2017, 4, 25), 5.3],
+            [Date.UTC(2017, 4, 26), 2],
+            [Date.UTC(2017, 4, 27), 4.9],
+            [Date.UTC(2017, 4, 28), 6.0],
+            [Date.UTC(2017, 4, 29), 6.8],
+            [Date.UTC(2017, 4, 30), 6.1],
+            [Date.UTC(2017, 5, 1), 7.2],
+            [Date.UTC(2017, 5, 2), 6.4],
+        ]
+    },
+    {
+        name: 'Austin',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 6.7],
+            [Date.UTC(2017, 4, 8), 6],
+            [Date.UTC(2017, 4, 9), 7],
+            [Date.UTC(2017, 4, 10), 6],
+            [Date.UTC(2017, 4, 11), 3],
+            [Date.UTC(2017, 4, 12), 7],
+            [Date.UTC(2017, 4, 13), 6.1],
+            [Date.UTC(2017, 4, 14), 7],
+            [Date.UTC(2017, 4, 15), 6.1],
+            [Date.UTC(2017, 4, 16), 7.0],
+            [Date.UTC(2017, 4, 17), 6.8],
+            [Date.UTC(2017, 4, 18), 6.7],
+            [Date.UTC(2017, 4, 19), 7],
+            [Date.UTC(2017, 4, 20), 6.7],
+            [Date.UTC(2017, 4, 21), 7.0],
+            [Date.UTC(2017, 4, 22), 6.9],
+            [Date.UTC(2017, 4, 23), 6.9],
+            [Date.UTC(2017, 4, 24), 6.1],
+            [Date.UTC(2017, 4, 25), 6.0],
+            [Date.UTC(2017, 4, 26), 4.7],
+            [Date.UTC(2017, 4, 27), 4.3],
+            [Date.UTC(2017, 4, 28), 4.9],
+            [Date.UTC(2017, 4, 29), 5.0],
+            [Date.UTC(2017, 4, 30), 4.3],
+            [Date.UTC(2017, 5, 1), 6.0],
+            [Date.UTC(2017, 5, 2), 5.7],
+        ]
+    },
+    {
+        name: 'San Francisco',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 2.8],
+            [Date.UTC(2017, 4, 8), 4],
+            [Date.UTC(2017, 4, 9), 6.5],
+            [Date.UTC(2017, 4, 10), 7],
+            [Date.UTC(2017, 4, 11), 6.7],
+            [Date.UTC(2017, 4, 12), 6.3],
+            [Date.UTC(2017, 4, 13), 3.9],
+            [Date.UTC(2017, 4, 14), 6.7],
+            [Date.UTC(2017, 4, 15), 6.8],
+            [Date.UTC(2017, 4, 16), 6.2],
+            [Date.UTC(2017, 4, 17), 5.3],
+            [Date.UTC(2017, 4, 18), 5],
+            [Date.UTC(2017, 4, 19), 6.5],
+            [Date.UTC(2017, 4, 20), 5.9],
+            [Date.UTC(2017, 4, 21), 7.2],
+            [Date.UTC(2017, 4, 22), 6.0],
+            [Date.UTC(2017, 4, 23), 5.8],
+            [Date.UTC(2017, 4, 24), 5.7],
+            [Date.UTC(2017, 4, 25), 5.9],
+            [Date.UTC(2017, 4, 26), 4.8],
+            [Date.UTC(2017, 4, 27), 5.6],
+            [Date.UTC(2017, 4, 28), 5.0],
+            [Date.UTC(2017, 4, 29), 5.9],
+            [Date.UTC(2017, 4, 30), 4.2],
+            [Date.UTC(2017, 5, 1), 5.0],
+            [Date.UTC(2017, 5, 2), 5.2],
+        ]
+    },
+    {
+        name: 'San Jose',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 2.8],
+            [Date.UTC(2017, 4, 8), 4],
+            [Date.UTC(2017, 4, 9), 6.5],
+            [Date.UTC(2017, 4, 10), 6.4],
+            [Date.UTC(2017, 4, 11), 6.7],
+            [Date.UTC(2017, 4, 12), 6.2],
+            [Date.UTC(2017, 4, 13), 3.8],
+            [Date.UTC(2017, 4, 14), 6.7],
+            [Date.UTC(2017, 4, 15), 6.8],
+            [Date.UTC(2017, 4, 16), 6.3],
+            [Date.UTC(2017, 4, 17), 5.3],
+            [Date.UTC(2017, 4, 18), 5],
+            [Date.UTC(2017, 4, 19), 6.5],
+            [Date.UTC(2017, 4, 20), 5.5],
+            [Date.UTC(2017, 4, 21), 7.2],
+            [Date.UTC(2017, 4, 22), 5.0],
+            [Date.UTC(2017, 4, 23), 5.8],
+            [Date.UTC(2017, 4, 24), 6.0],
+            [Date.UTC(2017, 4, 25), 5.7],
+            [Date.UTC(2017, 4, 26), 5.2],
+            [Date.UTC(2017, 4, 27), 5.6],
+            [Date.UTC(2017, 4, 28), 6.0],
+            [Date.UTC(2017, 4, 29), 5.9],
+            [Date.UTC(2017, 4, 30), 5.4],
+            [Date.UTC(2017, 5, 1), 5.0],
+            [Date.UTC(2017, 5, 2), 5.2],
+        ]
+    }
+    
+
+
+    ]
+});
+
+    });
+
+    </script>
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -169,7 +673,7 @@ Ubicaciones</span></a></li>
           <!-- AREA CHART -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><span lang="en">Asthma Pollutants Levels at San Jose</span><span lang="es">Niveles de contaminantes del asma en San José</span></h3>
+              <h3 class="box-title"><span lang="en">Cold/Flu Levels Comparison - Cities</span><span lang="es">Niveles de contaminantes del Flu</span></h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -179,7 +683,7 @@ Ubicaciones</span></a></li>
             </div>
             <div class="box-body">
               <div class="chart">
-                <div id="areaChart" style="height:250px"></div>
+                <div id="container12" style="height:250px"></div>
 
               </div>
             </div>
@@ -221,7 +725,7 @@ Ubicaciones</span></a></li>
             </div>
             <div class="box-body">
               <div class="chart">
-                <div id="asthmaChart" style="height:250px"></div>
+                <div id="container14" style="height:250px"></div>
               </div>
             </div>
             <!-- /.box-body -->
@@ -241,7 +745,7 @@ Ubicaciones</span></a></li>
             </div>
             <div class="box-body">
               <div class="chart">
-                <div id="pollenChart" style="height:250px"></div>
+                <div id="container13" style="height:250px"></div>
               </div>
             </div>
             <!-- /.box-body -->
@@ -329,32 +833,6 @@ function select_language(language) {
     });
 }
 </script>
-<script>
-
-var chart = Highcharts.chart('areaChart', {
-
-    title: {
-        text: ''
-    },
-
-    subtitle: {
-        text: 'Allergy Levels'
-    },
-
-    xAxis: {
-        categories: ['4/21/2017', '4/22/2017', '4/23/2017', '4/24/2017', '4/25/2017', '4/26/2017', '4/27/2017', '4/28/2017', '429/2017', '4/30/2017', '5/1/2017', '5/2/2017']
-    },
-
-    series: [{
-        type: 'column',
-        colorByPoint: true,
-        data: [7.2, 5.0, 5.8, 6.0, 5.7, 5.2, 5.6, 6.0, 5.9, 5.4, 5.0, 5.2],
-        showInLegend: false
-    }]
-
-});
-
-</script>
 
 
 <script>
@@ -436,49 +914,255 @@ $(document).ready(function () {
 });
 </script>
 <script>
-Highcharts.chart('asthmaChart', {
+$(document).ready(function () {
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
 
-
- title: {
-        text: 'Asthma Pollutants Comparison - Cities'
+    Highcharts.chart('container14', {
+        chart: {
+            type: 'spline',
+            animation: Highcharts.svg, // don't animate in old IE
+            marginRight: 10,
+         events: {
+            load: function () {
+                var x =  Date.UTC(2017, 4, 12);
+                // set up the updating of the chart each second
+                var series = this.series[0];
+                var series1 = this.series[1];
+				var series2 = this.series[2];
+				var series3 = this.series[3];
+				var series4 = this.series[4];
+                setInterval(function () {
+                    x+=86400000;
+                     var   y = Math.round(Math.random() * 100)/10;
+                    console.log(x+","+y);
+                    series.addPoint([x, y], true, true);
+                    series1.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series2.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series3.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+					series4.addPoint([x,Math.round(Math.random() * 100)/10],true, true);
+                }, 5000);
+            }
+        }
     },
-
-
-    yAxis: {
+    
         title: {
-            text: 'Allergy Level'
+            text: ' '
+        },
+       
+        xAxis: {
+          type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+            month: '%e. %b',
+            year: '%b'
+        },
+            labels: {
+            offset:'100',
+        },
+        title: {
+            text: 'Date'
         }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
-    },
+        },
+        yAxis: {
+            title: {
+                text: 'Severity Level'
+            },
+            max: 10,
+            min:0,
+            
+        },
+        
+        legend: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: 
+		[
+		{
+        name: 'New York',
+        pointRange : 5,
+        // Define the data points. All series have a dummy year
+        // of 1970/71 in order to be compared on the same x axis. Note
+        // that in JavaScript, months start at 0 for January, 1 for February etc.
+        data: [
+            [Date.UTC(2017, 4, 7), 9.9],
+            [Date.UTC(2017, 4, 8), 10.9],
+            [Date.UTC(2017, 4, 9), 10.6],
+            [Date.UTC(2017, 4, 10), 11.2],
+            [Date.UTC(2017, 4, 11), 11.6],
+            [Date.UTC(2017, 4, 12), 11.1],
 
-    plotOptions: {
-        series: {
-            pointStart:2008
-        }
-    },
 
-    series: [{
-        name: 'New york',
-        data: [7.5, 7, 7.1, 6.3, 7.7, 6, 2.4, 6.1]
-    }, {
+            [Date.UTC(2017, 4, 13), 11.1],
+            [Date.UTC(2017, 4, 14), 10.8],
+            [Date.UTC(2017, 4, 15), 10.5],
+            [Date.UTC(2017, 4, 16), 11.5],
+            [Date.UTC(2017, 4, 17), 11.8],
+            [Date.UTC(2017, 4, 18), 10.8],
+            [Date.UTC(2017, 4, 19), 10.5],
+            [Date.UTC(2017, 4, 20), 5.5],
+            [Date.UTC(2017, 4, 21), 5.4],
+            [Date.UTC(2017, 4, 22), 11.4],
+            [Date.UTC(2017, 4, 23), 10.2],
+            [Date.UTC(2017, 4, 24), 2.5],
+            [Date.UTC(2017, 4, 25), 5.7],
+            [Date.UTC(2017, 4, 26), 10.2],
+            [Date.UTC(2017, 4, 27), 10.1],
+            [Date.UTC(2017, 4, 28), 10.2],
+            [Date.UTC(2017, 4, 29), 10.0],
+            [Date.UTC(2017, 4, 30), 10.1],
+            [Date.UTC(2017, 5, 1), 9.3],
+            [Date.UTC(2017, 5, 2), 10.9],
+        ]
+    }, 
+	{
         name: 'Chicago',
-        data: [5.3, 2, 4.9, 6, 6.8, 6.1, 7.2, 6.4]
-    }, {
-        name: 'Austin',
-        data: [6, 4.7, 4.3, 4.9, 5, 4.3, 6, 5.7]
-    }, {
-        name: 'San Francisco',
-        data: [5.9, 4.8, 5.6, 5, 5.9, 4.2, 5, 5.2]
-    }, {
-        name: 'San Jose',
-        data: [5.7, 5.2, 5.6, 6, 5.9, 5.4, 5, 5.2]
-    }]
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 9.8],
+            [Date.UTC(2017, 4, 8), 9],
+            [Date.UTC(2017, 4, 9), 9.6],
+            [Date.UTC(2017, 4, 10), 10.8],
+            [Date.UTC(2017, 4, 11), 10.5],
+            [Date.UTC(2017, 4, 12), 9.5],
 
+
+            [Date.UTC(2017, 4, 13), 4.4],
+            [Date.UTC(2017, 4, 14), 8.0],
+            [Date.UTC(2017, 4, 15), 9.4],
+            [Date.UTC(2017, 4, 16), 10.0],
+            [Date.UTC(2017, 4, 17), 11.1],
+            [Date.UTC(2017, 4, 18), 10.3],
+            [Date.UTC(2017, 4, 19), 8],
+            [Date.UTC(2017, 4, 20), 10.5],
+            [Date.UTC(2017, 4, 21), 10.6],
+            [Date.UTC(2017, 4, 22), 9.8],
+            [Date.UTC(2017, 4, 23), 9.7],
+            [Date.UTC(2017, 4, 24), 9.7],
+            [Date.UTC(2017, 4, 25), 6.9],
+            [Date.UTC(2017, 4, 26), 5.4],
+            [Date.UTC(2017, 4, 27), 7.3],
+            [Date.UTC(2017, 4, 28), 6.5],
+            [Date.UTC(2017, 4, 29), 1],
+            [Date.UTC(2017, 4, 30), 5.8],
+            [Date.UTC(2017, 5, 1), 7.8],
+            [Date.UTC(2017, 5, 2), 8.8],
+        ]
+    },
+    {
+        name: 'Austin',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 9.2],
+            [Date.UTC(2017, 4, 8), 9.1],
+            [Date.UTC(2017, 4, 9), 8.2],
+            [Date.UTC(2017, 4, 10), 7.6],
+            [Date.UTC(2017, 4, 11), 1],
+            [Date.UTC(2017, 4, 12), 8.6],
+
+
+            [Date.UTC(2017, 4, 13), 8.1],
+            [Date.UTC(2017, 4, 14), 8.3],
+            [Date.UTC(2017, 4, 15), 8.2],
+            [Date.UTC(2017, 4, 16), 8.7],
+            [Date.UTC(2017, 4, 17), 8],
+            [Date.UTC(2017, 4, 18), 8.4],
+            [Date.UTC(2017, 4, 19), 8.4],
+            [Date.UTC(2017, 4, 20), 10.5],
+            [Date.UTC(2017, 4, 21), 7.9],
+            [Date.UTC(2017, 4, 22), 8.7],
+            [Date.UTC(2017, 4, 23), 6.6],
+            [Date.UTC(2017, 4, 24), 5.9],
+            [Date.UTC(2017, 4, 25), 4.8],
+            [Date.UTC(2017, 4, 26), 4.6],
+            [Date.UTC(2017, 4, 27), 4.8],
+            [Date.UTC(2017, 4, 28), 5.0],
+            [Date.UTC(2017, 4, 29), 3.7],
+            [Date.UTC(2017, 4, 30), 6.7],
+            [Date.UTC(2017, 5, 1), 6.3],
+            [Date.UTC(2017, 5, 2), 5],
+        ]
+    },
+    {
+        name: 'San Francisco',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 1],
+            [Date.UTC(2017, 4, 8), 4.1],
+            [Date.UTC(2017, 4, 9), 8.6],
+            [Date.UTC(2017, 4, 10), 8.7],
+            [Date.UTC(2017, 4, 11), 8.9],
+            [Date.UTC(2017, 4, 12), 8.2],
+
+
+            [Date.UTC(2017, 4, 13), 4.2],
+            [Date.UTC(2017, 4, 14), 8.8],
+            [Date.UTC(2017, 4, 15), 9.0],
+            [Date.UTC(2017, 4, 16), 8.4],
+            [Date.UTC(2017, 4, 17), 7],
+            [Date.UTC(2017, 4, 18), 8.4],
+            [Date.UTC(2017, 4, 19), 7.0],
+            [Date.UTC(2017, 4, 20), 8.3],
+            [Date.UTC(2017, 4, 21), 7.4],
+            [Date.UTC(2017, 4, 22), 7.3],
+            [Date.UTC(2017, 4, 23), 6.4],
+            [Date.UTC(2017, 4, 24), 7.1],
+            [Date.UTC(2017, 4, 25), 7.5],
+            [Date.UTC(2017, 4, 26), 7.1],
+            [Date.UTC(2017, 4, 27), 6.7],
+            [Date.UTC(2017, 4, 28), 6.8],
+            [Date.UTC(2017, 4, 29), 6.9],
+            [Date.UTC(2017, 4, 30), 6.6],
+            [Date.UTC(2017, 5, 1), 6.3],
+            [Date.UTC(2017, 5, 2), 6],
+        ]
+    },
+    {
+        name: 'San Jose',
+        pointRange : 5,
+        data: [
+            [Date.UTC(2017, 4, 7), 1],
+            [Date.UTC(2017, 4, 8), 4.1],
+            [Date.UTC(2017, 4, 9), 8.6],
+            [Date.UTC(2017, 4, 10), 8.8],
+            [Date.UTC(2017, 4, 11), 8.9],
+            [Date.UTC(2017, 4, 12), 8.2],
+
+
+            [Date.UTC(2017, 4, 13), 4.2],
+            [Date.UTC(2017, 4, 14), 8.8],
+            [Date.UTC(2017, 4, 15), 9.0],
+            [Date.UTC(2017, 4, 16), 8.4],
+            [Date.UTC(2017, 4, 17), 7],
+            [Date.UTC(2017, 4, 18), 5.7],
+            [Date.UTC(2017, 4, 19), 8.4],
+            [Date.UTC(2017, 4, 20), 7.3],
+            [Date.UTC(2017, 4, 21), 8.9],
+            [Date.UTC(2017, 4, 22), 8.2],
+            [Date.UTC(2017, 4, 23), 7.4],
+            [Date.UTC(2017, 4, 24), 7.3],
+            [Date.UTC(2017, 4, 25), 7.3],
+            [Date.UTC(2017, 4, 26), 6.4],
+            [Date.UTC(2017, 4, 27), 7.1],
+            [Date.UTC(2017, 4, 28), 7.5],
+            [Date.UTC(2017, 4, 29), 7.1],
+            [Date.UTC(2017, 4, 30), 6.7],
+            [Date.UTC(2017, 5, 1), 6.8],
+            [Date.UTC(2017, 5, 2), 6.9],
+        ]
+    }
+    
+
+
+    ]
 });
+
+    });
 </script>
 
 <script>
@@ -535,7 +1219,7 @@ var chart = Highcharts.chart('pollenChartSanJose', {
     },
 
     subtitle: {
-        text: 'Pollen Allergy Levels'
+        text: ' '
     },
 
     xAxis: {

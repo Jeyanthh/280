@@ -261,9 +261,9 @@ Ubicaciones</span></a></li>
       </div>
       <!-- /.row -->
       <!-- Main row -->
-      <div id="row1" onclick="window.location.hash='back';" style="padding:2cm;" >
-           <div class="col-md-8"><img src="images/email.jpg"  style="width:600px; height:300px"></div>
-       <div class="col-md-4">
+      <div id="row1" onclick="window.location.hash='back';" style="margin-left:25px;margin-top:25px">
+           <div class="col-md-4"><img src="images/email.jpg"  ></div>
+       <div class="col-md-6">
            <div id ="content">
                <h2> <span lang="en">Email Notification</span><span lang="es">
 Notificación de correo electrónico</span></h2>
@@ -287,10 +287,10 @@ Estamos dando a los usuarios una característica impresionante para ser notifica
 
                 </div>
             </div>
-            <div id="row2" onclick="window.location.hash='back';" style="padding:2cm;" >
-                <div class="col-md-8"><img src="images/sms.jpg" style="width:600px; height:300px"></div>
+            <div id="row2" onclick="window.location.hash='back';"  style="margin-left:25px;margin-top:25px">
+                <div class="col-md-4"><img src="images/sms.jpg" ></div>
 
-                <div class="col-md-4"> <div id ="content">
+                <div class="col-md-6"> <div id ="content">
                     <h2> <span lang="en">SMS Notification</span><span lang="es">
 Notificación SMS</span></h2>
                     <p>
@@ -315,23 +315,13 @@ Estamos dando a los usuarios una característica impresionante para ser notifica
       <!-- /.row (main row) -->
 
 
- <footer class="main-footer">
 
-      <center> <ul class="pagination" >
-  <li><a href="index.html">1</a></li>
-  <li><a href="LiveForecast.html">2</a></li>
-  <li><a href="notifications.html">3</a></li>
-  <li><a href="locations.html">4</a></li>
-  <li><a href="pages/examples/register.html ">5 </a></li>
-          </ul></center>
 
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.2.0
-
+    
         </section>
         <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
+    <!-- /.content-wrapper --> 
     <footer class="main-footer">
 
         <center> <ul class="pagination" >
@@ -738,7 +728,7 @@ function select_language(language) {
   $('#smsButton').click( function() {
   var email = localStorage.getItem('email');
   var fullname = localStorage.getItem('fullname');
-  var message = 'Pollen Alert with data';
+  var message = 'Today Cold/Flu level is 6.2. Asthma Level is 8.2 Pollen Level is 6.2 Please check the nearest pharmacy to get medication';
   var obj = {
     'email' : email,
     'mobile' : '+16692437106',
@@ -764,7 +754,7 @@ function select_language(language) {
   $('#emailButton').click(function() {
     var email = localStorage.getItem('email');
   var fullname = localStorage.getItem('fullname');
-  var message = 'Congratulations! You are now registered to our Allergy alert system. Stay tuned for updates!!';
+  var message = 'Today Cold/Flu level is 6.2. Asthma Level is 8.2 Pollen Level is 6.2 Please check the nearest pharmacy to get medication';
   var obj = {
     'email' : email,
     'mobile' : '+16692437106',
